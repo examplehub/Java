@@ -1,7 +1,5 @@
 package com.examplehub.sorts;
 
-import java.util.Objects;
-
 public class BubbleSort {
 
     /**
