@@ -9,24 +9,24 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class BubbleSortTest {
+class InsertionSortTest {
 
     private Sort sort;
 
     @BeforeEach
     public void before() {
-        sort = new BubbleSort();
+        sort = new InsertionSort();
     }
 
     @Test
-    void testSort() {
+    void sort() {
         int[] ints = RandomUtils.randomInts(-50, 50, 100);
         sort.sort(ints);
         assertTrue(SortUtils.isSorted(ints));
     }
 
     @Test
-    void testSortIntegers() {
+    void sortInteger() {
         Integer[] integers = Arrays.stream(RandomUtils.randomInts(-50, 50, 100))
                 .boxed().toArray(Integer[]::new);
         sort.sort(integers);
@@ -34,7 +34,7 @@ class BubbleSortTest {
     }
 
     @Test
-    void testSortedDoubles() {
+    void sortDouble() {
         Double[] doubles = new Double[100];
         double[] tempDoubles = RandomUtils.randomDoubles(-50, 50, 100);
         for (int i = 0; i < doubles.length; ++i) {
