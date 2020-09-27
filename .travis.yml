@@ -1,2 +1,3 @@
 language: java
-- gradle clean test
+script:
+  - gradle clean test
