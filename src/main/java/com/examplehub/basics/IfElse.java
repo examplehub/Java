@@ -1,25 +1,20 @@
 package com.examplehub.basics;
 
+import java.util.Scanner;
+
 public class IfElse {
     public static void main(String[] args) {
-        int a = 3; /* change data to test */
-        int b = 4; /* change data to test */
-        if (a == b) {
-            System.out.println("a == b");
-        } else {
-            System.out.println("a != b");
-        }
+        Scanner scanner = new Scanner(System.in);
 
-        if (true) {
-            System.out.println("this will happen");
-        }else {
-            System.out.println("this will not happen");
-        }
+        System.out.println("Please input first number:");
+        int firstNumber = scanner.nextInt();
+        System.out.println("Please input second number:");
+        int secondNumber = scanner.nextInt();
 
-        if (false) {
-            System.out.println("this will not happen");
+        if (firstNumber == secondNumber) {
+            System.out.println(firstNumber + " == " + secondNumber);
         } else {
-            System.out.println("this will happen");
+            System.out.println(firstNumber + " != " + secondNumber);
         }
     }
 }

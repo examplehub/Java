@@ -1,17 +1,24 @@
 package com.examplehub.basics;
 
+import java.util.Scanner;
+
 public class IfElseifElse {
     public static void main(String[] args) {
-        int a = 3; /* change data to test */
-        if (a > 0) {
-            System.out.println("it is positive number");
-        } else if (a < 0) {
-            System.out.println("it is negative number");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please input a number:");
+        int number = scanner.nextInt();
+        if (number > 0) {
+            System.out.println(number + " is positive number");
+        } else if (number < 0) {
+            System.out.println(number + " is negative number");
         } else {
-            System.out.println("it is zero");
+            System.out.println("input is zero");
         }
 
-        int day = 6; /* change data to test */
+        System.out.println("Please input a day:");
+        int day = scanner.nextInt();
+
         if (day == 1) {
             System.out.println("Monday");
         } else if (day == 2) {
