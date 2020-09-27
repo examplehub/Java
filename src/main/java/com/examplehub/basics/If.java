@@ -13,5 +13,12 @@ public class If {
         if (a < b) {
             System.out.println("a < b");
         }
+
+        if (true) {
+            System.out.println("this will happen");
+        }
+        if (false) {
+            System.out.println("this will not happen");
+        }
     }
 }
