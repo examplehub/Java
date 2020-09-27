@@ -20,4 +20,4 @@
 * Expand acronyms because `gcd()` is hard to understand but `greatest_common_divisor()` is not.
 * Write `junit` to test all your functions.
 * Make sure build success using `gradle clean test` command.
-* Keep [Java naming conventions](https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html) in mind.
+* Please follow [Java naming conventions](https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html).
