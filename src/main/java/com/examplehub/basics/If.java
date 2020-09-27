@@ -1,24 +1,24 @@
 package com.examplehub.basics;
 
+import java.util.Scanner;
+
 public class If {
     public static void main(String[] args) {
-        int a = 3; /* change 3 to what you want */
-        int b = 4; /* change 4 to what you want */
-        if (a == b) {
-            System.out.println("a == b");
-        }
-        if (a > b) {
-            System.out.println("a > b");
-        }
-        if (a < b) {
-            System.out.println("a < b");
-        }
+        Scanner scanner = new Scanner(System.in);
 
-        if (true) {
-            System.out.println("this will happen");
+        System.out.println("Please input first number:");
+        int firstNumber = scanner.nextInt();
+        System.out.println("Please input second number:");
+        int secondNumber = scanner.nextInt();
+
+        if (firstNumber == secondNumber) {
+            System.out.println(firstNumber + " == " + secondNumber);
         }
-        if (false) {
-            System.out.println("this will not happen");
+        if (firstNumber > secondNumber) {
+            System.out.println(firstNumber + " > " + secondNumber);
+        }
+        if (firstNumber < secondNumber) {
+            System.out.println(firstNumber + " < " + secondNumber);
         }
     }
 }
