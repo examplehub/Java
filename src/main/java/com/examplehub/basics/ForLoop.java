@@ -55,5 +55,13 @@ public class ForLoop {
             System.out.print(number);
         }
         System.out.println("\n");
+
+        /* infinite loop */
+        /*
+        for (; ; ) {
+            do some work
+        }
+        */
+        
     }
 }
