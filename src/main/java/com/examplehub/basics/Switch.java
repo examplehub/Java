@@ -31,7 +31,7 @@ public class Switch {
                     level = 'E';
                     break;
             }
-            System.out.println(score + " is level " + level)
+            System.out.println(score + " is level " + level);
         }
     }
 }
