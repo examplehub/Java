@@ -28,7 +28,7 @@ public class BubbleSort implements Sort {
      * Generic BubbleSort algorithm implements.
      *
      * @param array the array to be sorted.
-     * @param <T>   the class of the objects in the list.
+     * @param <T>   the class of the objects in the array.
      */
     public <T extends Comparable<T>> void sort(T[] array) {
         for (int i = 0; i < array.length - 1; ++i) {
