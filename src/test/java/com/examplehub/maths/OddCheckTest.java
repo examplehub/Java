@@ -21,7 +21,6 @@ class OddCheckTest {
         }
     }
 
-    @Test
     void testSpeed() {
         int[] ints = RandomUtils.randomInts(-1000, 1000, Integer.MAX_VALUE);
 

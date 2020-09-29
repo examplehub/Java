@@ -3,7 +3,7 @@ package com.examplehub.maths;
 import com.examplehub.utils.RandomUtils;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class EvenCheckTest {
 
@@ -21,7 +21,6 @@ class EvenCheckTest {
         }
     }
 
-    @Test
     void testSpeed() {
         int[] ints = RandomUtils.randomInts(-1000, 1000, Integer.MAX_VALUE);
 
