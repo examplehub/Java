@@ -8,7 +8,7 @@ public class ArrayStack<E> {
     /**
      * The stack array which store elements.
      */
-    private E[] stack;
+    private final E[] stack;
 
     /**
      * The number of elements in this stack.
@@ -20,7 +20,7 @@ public class ArrayStack<E> {
      */
     private int top;
 
-    private int capacity;
+    private final int capacity;
 
     /**
      * Default initial capacity.
