@@ -11,5 +11,10 @@ class SquareNumberTest {
         for (int number : squareNumbers) {
             assertTrue(SquareNumber.isSquareNumber(number));
         }
+
+        int[] notSquareNumbers = {2, 3, 5, 6, 7, 8, 10, 99};
+        for (int number : notSquareNumbers) {
+            assertFalse(SquareNumber.isSquareNumber(number));
+        }
     }
 }
