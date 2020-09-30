@@ -26,15 +26,15 @@ class QueueTest {
 
         assertEquals("1", queue.enqueue("1"));
         assertEquals("2", queue.enqueue("2"));
+        assertEquals("3", queue.front());
+        assertEquals("2", queue.rear());
         assertTrue(queue.full());
         assertEquals("[3, 4, 5, 1, 2]", queue.toString());
 
         assertEquals("3", queue.dequeue());
         assertEquals("4", queue.dequeue());
-        assertEquals("5", queue.dequeue());
-        assertEquals("1", queue.dequeue());
-        assertEquals("2", queue.dequeue());
 
+        queue.clear();
         assertEquals(queue.size(), 0);
         assertTrue(queue.empty());
         assertEquals("[]", queue.toString());

@@ -80,6 +80,30 @@ public class Queue<E> {
     }
 
     /**
+     * Get element at rear of this queue.
+     *
+     * @return element at rear of this queue.
+     */
+    public E rear() {
+        if (empty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
+        return queue[rear];
+    }
+
+    /**
+     * Get element at front of this queue.
+     *
+     * @return element at front of this queue.
+     */
+    public E front() {
+        if (empty()) {
+            throw new IllegalStateException("Queue is empty");
+        }
+        return queue[front];
+    }
+
+    /**
      * Clear all elements in the stack.
      */
     public void clear() {
