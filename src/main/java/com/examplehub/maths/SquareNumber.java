@@ -1,5 +1,8 @@
 package com.examplehub.maths;
 
+/**
+ * https://en.wikipedia.org/wiki/Square_number
+ */
 public class SquareNumber {
 
     /**
