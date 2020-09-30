@@ -37,7 +37,6 @@ public class SumOfTwoBigNumbers {
             int sum = carry + (i1 != -1 ? bytes1[i1] - '0' : 0) + (i2 != -1 ? bytes2[i2] - '0' : 0);
             carry = sum / 10;
             builder.append(sum % 10);
-            System.out.println(i1 + ":" + i2);
             if (i1 >= 0) {
                 i1--;
             }
