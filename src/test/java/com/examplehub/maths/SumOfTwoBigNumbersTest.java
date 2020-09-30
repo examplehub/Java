@@ -16,4 +16,14 @@ class SumOfTwoBigNumbersTest {
                 "2469135782022242628303234"
         );
     }
+
+    @Test
+    void sumOf() {
+        System.out.println(SumOfTwoBigNumbers.sumOf("40", "60"));
+        assertEquals("1000000000000", SumOfTwoBigNumbers.sumOf("400000000000", "600000000000"));
+        assertEquals(
+                SumOfTwoBigNumbers.sumOf("1234567891011121314151617", "1234567891011121314151617"),
+                "2469135782022242628303234"
+        );
+    }
 }

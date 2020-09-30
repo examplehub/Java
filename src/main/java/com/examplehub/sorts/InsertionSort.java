@@ -25,7 +25,7 @@ public class InsertionSort implements Sort {
      * Generic InsertionSort algorithm implements.
      *
      * @param array the array to be sorted.
-     * @param <T>   the class of the objects in the list.
+     * @param <T>   the class of the objects in the array.
      */
     public <T extends Comparable<T>> void sort(T[] array) {
         for (int i = 1; i < array.length; ++i) {

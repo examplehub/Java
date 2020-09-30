@@ -21,9 +21,8 @@ class OddCheckTest {
         }
     }
 
-    @Test
     void testSpeed() {
-        int[] ints = RandomUtils.randomInts(-1000, 1000, 1000);
+        int[] ints = RandomUtils.randomInts(-1000, 1000, Integer.MAX_VALUE);
 
         long startTime = System.nanoTime();
         for (int j : ints) {
