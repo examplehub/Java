@@ -21,6 +21,6 @@ public class FindMax {
     }
 
     public static int findMaxSecond(int[] numbers) {
-        return Arrays.stream(numbers).max().orElseThrow();
+        return Arrays.stream(numbers).max().getAsInt();
     }
 }
