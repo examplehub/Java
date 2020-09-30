@@ -1,6 +1,7 @@
 language: java
 script:
   - gradle clean test
+  - mvn clean test
   
 notifications:
     webhooks: https://www.travisbuddy.com/
