@@ -16,7 +16,7 @@ public class NarcissisticNumber {
         int copy = number;
         int digits = CountDigits.countDigits(number);
         while (number != 0) {
-            sum += Math.pow(number % 10, digits);
+            sum += (int) Math.pow(number % 10, digits);
             number /= 10;
         }
         return copy == sum;
