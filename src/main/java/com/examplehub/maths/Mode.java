@@ -13,19 +13,19 @@ public class Mode {
      */
     public static int mode(int[] numbers) {
         int maxCount = 0;
-        int number = 0;
-        for (int k : numbers) {
+        int modeNumber = 0;
+        for (int number : numbers) {
             int count = 0;
-            for (int i : numbers) {
-                if (i == k) {
+            for (int temp : numbers) {
+                if (temp == number) {
                     count++;
                 }
             }
             if (count > maxCount) {
                 maxCount = count;
-                number = k;
+                modeNumber = number;
             }
         }
-        return number;
+        return modeNumber;
     }
 }
