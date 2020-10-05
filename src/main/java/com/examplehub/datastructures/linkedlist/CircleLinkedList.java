@@ -1,5 +1,7 @@
 package com.examplehub.datastructures.linkedlist;
 
+import java.util.StringJoiner;
+
 public class CircleLinkedList<E> {
 
     /**
@@ -46,7 +48,7 @@ public class CircleLinkedList<E> {
      * @param data the data of new node.
      */
     public void insert(E data) {
-        insertNth(size, data);
+        insertTail(data);
     }
 
     /**
@@ -63,7 +65,7 @@ public class CircleLinkedList<E> {
      *
      * @param data the data of new node.
      */
-    public void insetTail(E data) {
+    public void insertTail(E data) {
         insertNth(size, data);
     }
 
@@ -75,7 +77,29 @@ public class CircleLinkedList<E> {
      * @throws IndexOutOfBoundsException if index is invalid.
      */
     public void insertNth(int index, E data) {
-
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException(index + "");
+        }
+        Node<E> newNode = new Node<>(data);
+        if (size == 0) { /* CircleLinkedList is empty */
+            newNode.next = newNode; /* first node points itself */
+            tail = head = newNode;
+        } else if (index == 0) {
+            newNode.next = head;
+            tail.next = head = newNode;
+        } else if (index == size) {
+            newNode.next = tail.next;
+            tail.next = newNode;
+            tail = tail.next;
+        } else {
+            Node<E> temp = head;
+            for (int i = 0; i < index - 1; ++i) {
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+        size++;
     }
 
     /**
@@ -97,7 +121,7 @@ public class CircleLinkedList<E> {
     }
 
     /**
-     * Delete a node at the tail of SinglyLinkedList.
+     * Delete a node at the tail of CircleLinkedList.
      *
      * @return deleted data.
      */
@@ -113,6 +137,40 @@ public class CircleLinkedList<E> {
      * @throws IndexOutOfBoundsException if given index is out of bounds.
      */
     public E deleteNth(int index) {
-        return null;
+        if (index < 0 || index > size - 1) {
+            throw new IndexOutOfBoundsException(index + "");
+        }
+
+        Node<E> deleteNode = head;
+        if (size == 1) { /* just one node */
+            tail = head = null;
+        } else if (index == 0) {
+            tail.next = tail.next.next;
+            head = head.next;
+        } else {
+            Node<E> temp = head;
+            for (int i = 0; i < index - 1; ++i) {
+                temp = temp.next;
+            }
+            deleteNode = temp.next;
+            temp.next = temp.next.next;
+            if (index == size - 1) {
+                tail = temp;
+            }
+        }
+        size--;
+        return deleteNode.data;
+    }
+
+    @Override
+    public String toString() {
+        StringJoiner joiner = new StringJoiner("->");
+        Node<E> current = head;
+        for (int i = 1; i <= size; ++i) {
+            joiner.add(current.data.toString());
+            current = current.next;
+        }
+        joiner.add("NULL");
+        return joiner.toString();
     }
 }
