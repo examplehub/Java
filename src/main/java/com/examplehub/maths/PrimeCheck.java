@@ -9,7 +9,7 @@ public class PrimeCheck {
      * @param number the number to be checked.
      * @return {@code true} if the given {@code number} is prime, otherwise {@code false}.
      */
-    public static boolean isPrime(int number) {
+    public static boolean isPrime(long number) {
         /* negative numbers and 0, 1 are not primes */
         if (number < 2) {
             return false;
