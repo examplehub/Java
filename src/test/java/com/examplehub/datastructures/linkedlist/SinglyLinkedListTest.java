@@ -148,7 +148,7 @@ class SinglyLinkedListTest {
         singlyLinkedList.insertHead("0");
         singlyLinkedList.insertNth(1, "1");
         singlyLinkedList.insertNth(2, "2");
-        singlyLinkedList.insetTail("5");
+        singlyLinkedList.insertTail("5");
 
         assertEquals(6, singlyLinkedList.size());
         assertEquals("0->1->2->3->4->5->NULL", singlyLinkedList.toString());

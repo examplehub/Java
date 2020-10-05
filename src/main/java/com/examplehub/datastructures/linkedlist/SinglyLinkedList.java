@@ -51,7 +51,7 @@ public class SinglyLinkedList<E> {
      * @param data the data of new node.
      */
     public void insert(E data) {
-        insertNth(size, data);
+        insertTail(data);
     }
 
     /**
@@ -68,7 +68,7 @@ public class SinglyLinkedList<E> {
      *
      * @param data the data of new node.
      */
-    public void insetTail(E data) {
+    public void insertTail(E data) {
         insertNth(size, data);
     }
 
@@ -170,23 +170,5 @@ public class SinglyLinkedList<E> {
         }
         joiner.add("NULL");
         return joiner.toString();
-    }
-}
-
-class Node<E> {
-    Node<E> next;
-    E data;
-
-    public Node() {
-        this(null, null);
-    }
-
-    public Node(E data) {
-        this(null, data);
-    }
-
-    public Node(Node<E> next, E data) {
-        this.next = next;
-        this.data = data;
     }
 }
