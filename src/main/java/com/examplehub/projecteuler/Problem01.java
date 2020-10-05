@@ -1,5 +1,8 @@
 package com.examplehub.projecteuler;
 
+/**
+ * https://projecteuler.net/problem=1
+ */
 public class Problem01 {
 
     public static int solution1(int n) {
