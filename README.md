@@ -9,8 +9,21 @@
 
 Java programming examples for educational purpose.
 
+## How to build the project
+Before you run this project. Please make sure you have `cloned` or [`Downloaded`](https://github.com/examplehub/Java/archive/master.zip) source code.
+
+* For maven build tools
+    ``` bash
+    mvn clean test
+    ```
+* For gradle build tools
+    ``` bash
+    gradle clean test
+    ```
+
+
 ## Contribution Guidelines
 Please read our [Contribution Guidelines](https://github.com/examplehub/Java/blob/master/CONTRIBUTING.md) before you contribute.
 
 ## List of Examples
-See our [directory](https://github.com/examplehub/Java/blob/master/DIRECTORY.md)
+See our [directory](https://github.com/examplehub/Java/blob/master/DIRECTORY.md).
