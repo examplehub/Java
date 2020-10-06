@@ -2,51 +2,48 @@ package com.examplehub.datastructures.linkedlist;
 
 import java.util.StringJoiner;
 
-public class SinglyLinkedList<E> {
+public class CircleLinkedList<E> {
 
     /**
-     * Head pointer of SinglyLinkedList.
+     * Head of CircleLinkedList.
      */
     private Node<E> head;
 
     /**
-     * Tail pointer of SinglyLinkedList.
+     * Tail of CircleLinkedList.
      */
     private Node<E> tail;
 
     /**
-     * Size of SinglyLinkedList.
+     * Count number of nodes in CircleLinkedList.
      */
     private int size;
 
-    /**
-     * Constructor
-     */
-    public SinglyLinkedList() {
-        this.head = this.tail = null;
-        this.size = 0;
+    public CircleLinkedList() {
+        head = tail = null;
+        size = 0;
     }
 
     /**
-     * Returns size of SinglyLinkedList.
+     * Returns size of CircleLinkedList.
      *
-     * @return size of SinglyLinkedList
+     * @return size of CircleLinkedList
      */
     public int size() {
         return size;
     }
 
     /**
-     * Test if SinglyLinked is empty or not.
+     * Test if CircleLinkedList is empty or not.
      *
-     * @return {@code true} if SinglyLinkedList is empty, otherwise {@code false}.
+     * @return {@code true} if CircleLinkedList is empty, otherwise {@code false}.
      */
     public boolean empty() {
         return size == 0;
     }
 
     /**
-     * Insert a node to end of SinglyLinkedList.
+     * Insert a node to end of CircleLinkedList.
      *
      * @param data the data of new node.
      */
@@ -55,7 +52,7 @@ public class SinglyLinkedList<E> {
     }
 
     /**
-     * Insert a node to head of SinglyLinkedList.
+     * Insert a node to head of CircleLinkedList.
      *
      * @param data the data of new node.
      */
@@ -64,7 +61,7 @@ public class SinglyLinkedList<E> {
     }
 
     /**
-     * Insert a node to end of SinglyLinkedList.
+     * Insert a node to end of CircleLinkedList.
      *
      * @param data the data of new node.
      */
@@ -73,7 +70,7 @@ public class SinglyLinkedList<E> {
     }
 
     /**
-     * Insert a new node at given index of SinglyLinkedList.
+     * Insert a new node at given index of CircleLinkedList.
      *
      * @param index the index to be deleted.
      * @param data  the data of new node.
@@ -84,15 +81,17 @@ public class SinglyLinkedList<E> {
             throw new IndexOutOfBoundsException(index + "");
         }
         Node<E> newNode = new Node<>(data);
-        if (head == null) { /* SinglyLinkedList is empty */
-            this.head = this.tail = newNode;
-        } else if (index == 0) { /* insert at head */
+        if (size == 0) { /* CircleLinkedList is empty */
+            newNode.next = newNode; /* first node points itself */
+            tail = head = newNode;
+        } else if (index == 0) {
             newNode.next = head;
-            this.head = newNode;
-        } else if (index == size) { /* insert at tail */
+            tail.next = head = newNode;
+        } else if (index == size) {
+            newNode.next = tail.next;
             tail.next = newNode;
             tail = tail.next;
-        } else { /* insert at middle */
+        } else {
             Node<E> temp = head;
             for (int i = 0; i < index - 1; ++i) {
                 temp = temp.next;
@@ -104,7 +103,7 @@ public class SinglyLinkedList<E> {
     }
 
     /**
-     * Delete a node at the tail of SinglyLinkedList.
+     * Delete a node at the tail of CircleLinkedList.
      *
      * @return deleted data.
      */
@@ -113,7 +112,7 @@ public class SinglyLinkedList<E> {
     }
 
     /**
-     * Delete a node at the head of SinglyLinkedList.
+     * Delete a node at the head of CircleLinkedList.
      *
      * @return deleted data.
      */
@@ -122,7 +121,7 @@ public class SinglyLinkedList<E> {
     }
 
     /**
-     * Delete a node at the tail of SinglyLinkedList.
+     * Delete a node at the tail of CircleLinkedList.
      *
      * @return deleted data.
      */
@@ -141,12 +140,12 @@ public class SinglyLinkedList<E> {
         if (index < 0 || index > size - 1) {
             throw new IndexOutOfBoundsException(index + "");
         }
-        Node<E> deleteNode;
-        if (size == 1) { /* just one node in SinglyLinkedList */
-            deleteNode = head;
+
+        Node<E> deleteNode = head;
+        if (size == 1) { /* just one node */
             tail = head = null;
         } else if (index == 0) {
-            deleteNode = head;
+            tail.next = tail.next.next;
             head = head.next;
         } else {
             Node<E> temp = head;
@@ -155,6 +154,9 @@ public class SinglyLinkedList<E> {
             }
             deleteNode = temp.next;
             temp.next = temp.next.next;
+            if (index == size - 1) {
+                tail = temp;
+            }
         }
         size--;
         return deleteNode.data;
@@ -163,10 +165,10 @@ public class SinglyLinkedList<E> {
     @Override
     public String toString() {
         StringJoiner joiner = new StringJoiner("->");
-        Node<E> temp = head;
-        while (temp != null) {
-            joiner.add(temp.data.toString());
-            temp = temp.next;
+        Node<E> current = head;
+        for (int i = 1; i <= size; ++i) {
+            joiner.add(current.data.toString());
+            current = current.next;
         }
         joiner.add("NULL");
         return joiner.toString();
