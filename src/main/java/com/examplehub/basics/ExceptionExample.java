@@ -7,11 +7,15 @@ public class ExceptionExample {
         /*
          * Index 5 out of bounds for length 5
          */
+
+        /*
+         * comment to fixed LGTM
         try {
             System.out.println(numbers[5]);
         } catch (IndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
+         */
 
         /*
          * ArithmeticException
