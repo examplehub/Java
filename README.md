@@ -21,7 +21,7 @@ Before you run this project. Please make sure you have `cloned` or [`Downloaded`
     gradle clean test
     ```
 
-## Examples List
+## List of Examples
 * [basics](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/basics)
 * [datastructure](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/datastructures)
 * [leetcode](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/leetcode)
@@ -35,6 +35,3 @@ Before you run this project. Please make sure you have `cloned` or [`Downloaded`
 
 ## Contribution Guidelines
 Please read our [Contribution Guidelines](https://github.com/examplehub/Java/blob/master/CONTRIBUTING.md) before you contribute.
-
-## List of Examples
-See our [directory](https://github.com/examplehub/Java/blob/master/DIRECTORY.md).
