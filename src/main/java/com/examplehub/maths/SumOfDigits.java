@@ -12,7 +12,7 @@ public class SumOfDigits {
         number = Math.abs(number);
         int sum = 0;
         while (number != 0) {
-            sum += number % 10;
+            sum = (int) (sum + number % 10);
             number /= 10;
         }
         return sum;
