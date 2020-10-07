@@ -8,7 +8,7 @@ public class SumOfDigits {
      * @param number the number.
      * @return the sum of digits.
      */
-    public static int sumOfDigits(int number) {
+    public static int sumOfDigits(long number) {
         number = Math.abs(number);
         int sum = 0;
         while (number != 0) {
