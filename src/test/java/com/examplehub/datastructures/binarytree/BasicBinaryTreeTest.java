@@ -9,6 +9,8 @@ class BasicBinaryTreeTest {
     @Test
     void testBasicBinaryTree() {
 
-        assertEquals("4->2->5->1->3", BasicBinaryTree.getBasicBinaryTree().toString());
+        assertEquals("1->2->4->5->3", BasicBinaryTree.getBasicBinaryTree().getPreOrder());
+        assertEquals("4->2->5->1->3", BasicBinaryTree.getBasicBinaryTree().getInorder());
+        assertEquals("4->5->2->3->1", BasicBinaryTree.getBasicBinaryTree().getPostOrder());
     }
 }
