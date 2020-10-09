@@ -35,6 +35,26 @@ public class BinarySearchTree<E extends Comparable<E>> {
         return root;
     }
 
+    public void delete(E key) {
+        if (search(key)) {
+            delete(root, key);
+        }
+    }
+
+    public Node<E> delete(Node<E> root, E key) {
+        if (root == null) {
+            return null;
+        }
+        if (key.compareTo(root.value) < 0) {
+            root.left = delete(root.left, key);
+        } else if (key.compareTo(root.value) > 0) {
+            root.right = delete(root.right, key);
+        } else {
+            //TODO
+        }
+        return null;
+    }
+
     public boolean search(E key) {
         return search(root, key);
     }
