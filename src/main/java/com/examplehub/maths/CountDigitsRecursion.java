@@ -5,7 +5,7 @@ public class CountDigitsRecursion {
     /**
      * Count the number of digits of a number using recursion.
      *
-     * @param number the number to counted.
+     * @param number the number to be counted.
      * @return the number of digits.
      */
     public static int countDigits(int number) {

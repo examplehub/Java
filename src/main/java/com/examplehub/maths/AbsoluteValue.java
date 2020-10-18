@@ -3,7 +3,7 @@ package com.examplehub.maths;
 public class AbsoluteValue {
 
     /**
-     * Returns the absolute value of a {@code long} value.
+     * Returns the absolute value of a {@code int} value.
      *
      * @param a the argument whose absolute value is to be determined.
      * @return the absolute value of the argument.
