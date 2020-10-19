@@ -135,6 +135,24 @@ public class ArrayList<E> {
     }
 
     /**
+     * Remove all given elements.
+     *
+     * @param target the target element to be removed.
+     * @return the number removed.
+     */
+    public int remove(E target) {
+        int count = 0;
+        for (int i = 0; i < size; ++i) {
+            if (!elements[i].equals(target)) {
+                elements[count++] = elements[i];
+            }
+        }
+        int removedCount = size - count;
+        size = count;
+        return removedCount;
+    }
+
+    /**
      * Clear all elements in this list.
      */
     public void clear() {

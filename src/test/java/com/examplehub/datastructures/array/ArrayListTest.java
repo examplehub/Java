@@ -47,4 +47,18 @@ class ArrayListTest {
         assertEquals(7, arrayList.size());
         assertEquals("[1, 2, 3, 4, 5, 6, 7]", arrayList.toString());
     }
+
+    @Test
+    void testRemove() {
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (int i = 1; i <= 5; i++) {
+            arrayList.add("" + i);
+        }
+        arrayList.add("3");
+        arrayList.add(2, "3");
+        assertEquals("[1, 2, 3, 3, 4, 5, 3]", arrayList.toString());
+
+        arrayList.remove("3");
+        assertEquals("[1, 2, 4, 5]", arrayList.toString());
+    }
 }
