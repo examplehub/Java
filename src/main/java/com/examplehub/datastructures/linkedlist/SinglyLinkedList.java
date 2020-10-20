@@ -64,12 +64,33 @@ public class SinglyLinkedList<E> {
     }
 
     /**
+     * Insert multi items to SinglyLinkedList.
+     *
+     * @param items the items to be inserted.
+     */
+    public void insertHead(E... items) {
+        for (E item : items) {
+            insertHead(item);
+        }
+    }
+
+    /**
      * Insert a node to end of SinglyLinkedList.
      *
      * @param data the data of new node.
      */
     public void insertTail(E data) {
         insertNth(size, data);
+    }
+
+    /**
+     * Insert multi items to SinglyLinkedList.
+     * @param items the items to be inserted.
+     */
+    public void insertTail(E... items) {
+        for (E item : items) {
+            insertTail(item);
+        }
     }
 
     /**
