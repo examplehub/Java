@@ -160,4 +160,18 @@ class SinglyLinkedListTest {
         assertEquals(2, singlyLinkedList.size());
         assertEquals("1->2->NULL", singlyLinkedList.toString());
     }
+
+    @Test
+    void testInsertHead() {
+        SinglyLinkedList<String> singlyLinkedList = new SinglyLinkedList<>();
+        singlyLinkedList.insertHead("5", "4", "3", "2", "1");
+        assertEquals("1->2->3->4->5->NULL", singlyLinkedList.toString());
+    }
+
+    @Test
+    void testInsertTail() {
+        SinglyLinkedList<String> singlyLinkedList = new SinglyLinkedList<>();
+        singlyLinkedList.insertTail("1", "2", "3", "4", "5");
+        assertEquals("1->2->3->4->5->NULL", singlyLinkedList.toString());
+    }
 }
