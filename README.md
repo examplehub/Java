@@ -23,7 +23,9 @@ Before you run this project. Please make sure you have `cloned` or [`Downloaded`
 
 ## List of Examples
 * [basics](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/basics)
+* [ciphers](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/ciphers)
 * [datastructure](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/datastructures)
+* [dynamicprogramming](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/dynamicprogramming)
 * [leetcode](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/leetcode)
 * [maths](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/maths)
 * [projecteuler](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/projecteuler)
