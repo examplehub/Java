@@ -1,8 +1,8 @@
 package com.examplehub.datastructures.linkedlist;
 
-class Node<E> {
-    Node<E> next;
-    E data;
+public class Node<E> {
+    public Node<E> next;
+    public E data;
 
     public Node() {
         this(null, null);
