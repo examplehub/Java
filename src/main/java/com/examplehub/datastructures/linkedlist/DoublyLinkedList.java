@@ -54,17 +54,14 @@ public class DoublyLinkedList<E> {
         }
         Node<E> newNode = new Node<>(data);
         if (head == null) { /* the DoublyLinked list is empty */
-            newNode.next = newNode.prev = null;
             head = tail = newNode;
         } else if (index == 0) { /* insert at head */
             head.prev = newNode;
             newNode.next = head;
-            newNode.prev = null;
             head = newNode;
         } else if (index == size) { /* insert at tail */
             tail.next = newNode;
             newNode.prev = tail;
-            newNode.next = null;
             tail = newNode;
         } else { /* insert at middle */
             Node<E> temp = head;
@@ -195,13 +192,8 @@ public class DoublyLinkedList<E> {
         Node<E> next; /* the pointer of next node */
 
         Node(E data) {
-            this(data, null, null);
-        }
-
-        Node(E data, Node<E> prev, Node<E> next) {
             this.data = data;
-            this.prev = prev;
-            this.next = next;
+            this.prev = this.next = null;
         }
     }
 }
