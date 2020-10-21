@@ -85,6 +85,7 @@ public class SinglyLinkedList<E> {
 
     /**
      * Insert multi items to SinglyLinkedList.
+     *
      * @param items the items to be inserted.
      */
     public void insertTail(E... items) {
@@ -96,7 +97,7 @@ public class SinglyLinkedList<E> {
     /**
      * Insert a new node at given index of SinglyLinkedList.
      *
-     * @param index the index to be deleted.
+     * @param index the index to be inserted.
      * @param data  the data of new node.
      * @throws IndexOutOfBoundsException if index is invalid.
      */
