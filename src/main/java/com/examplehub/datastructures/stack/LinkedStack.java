@@ -13,7 +13,7 @@ public class LinkedStack<E> {
     private Node<E> top;
 
     /**
-     * Size of the stack.
+     * The size of the stack.
      */
     private int size;
 
