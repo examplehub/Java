@@ -23,4 +23,14 @@ jobs:
           wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O format.jar
           ls
           java -jar format.jar --replace --set-exit-if-changed $(find . -type f -name "*.java" | grep ".*/src/.*java")
+      - name: Commit black changes
+        if: failure()
+        run: |
+          echo "success"
           git diff
+#          black .
+#          git config --global user.name github-actions
+#          git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+#          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+#          git commit -am "Formatted with psf/black"
+#          git push --force origin HEAD:$GITHUB_REF
