@@ -21,5 +21,6 @@ jobs:
       - name: Format
         run: |
           wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O format.jar
+          ls
           java -jar format.jar --replace --set-exit-if-changed $(find . -type f -name "*.java" | grep ".*/src/.*java")
           git diff
