@@ -20,5 +20,5 @@ jobs:
         java-version: 12
     - name: Google Java format
       run: |
-        wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O format.jar
-        ls
+        wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O formatter.jar
+        java -jar formatter.jar --replace --set-exit-if-changed $(find . -type f -name "*.java" | grep ".*/src/.*java")
