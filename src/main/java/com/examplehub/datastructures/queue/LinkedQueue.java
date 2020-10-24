@@ -54,8 +54,7 @@ public class LinkedQueue<E> {
         if (size == 0) {
             front = rear = newNode;
         } else {
-            rear.next = newNode;
-            rear = newNode;
+            rear = rear.next = newNode;
         }
         size++;
         return true;
@@ -72,11 +71,10 @@ public class LinkedQueue<E> {
 
     @Override
     public String toString() {
-        StringJoiner joiner = new StringJoiner(", ", "[", "]");
+        StringJoiner joiner = new StringJoiner(" <- ");
         Node<E> temp = front;
         while (temp != null) {
             joiner.add(temp.data.toString());
-            System.out.println(temp.data);
             temp = temp.next;
         }
         return joiner.toString();
