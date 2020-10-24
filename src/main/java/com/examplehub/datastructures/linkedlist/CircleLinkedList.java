@@ -76,7 +76,7 @@ public class CircleLinkedList<E> {
     }
     Node<E> newNode = new Node<>(data);
     if (size == 0) {
-        /* CircleLinkedList is empty */
+      /* CircleLinkedList is empty */
       newNode.next = newNode; /* first node points itself */
       tail = head = newNode;
     } else if (index == 0) {
@@ -138,7 +138,7 @@ public class CircleLinkedList<E> {
 
     Node<E> deleteNode = head;
     if (size == 1) {
-        /* just one node */
+      /* just one node */
       tail = head = null;
     } else if (index == 0) {
       tail.next = tail.next.next;

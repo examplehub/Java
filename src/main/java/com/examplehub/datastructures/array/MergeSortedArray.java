@@ -17,12 +17,12 @@ public class MergeSortedArray {
     }
 
     while (i < firstArray.length) {
-        /* store left element of first array */
+      /* store left element of first array */
       result[k++] = firstArray[i++];
     }
 
     while (j < secondArray.length) {
-        /* store left element of second array */
+      /* store left element of second array */
       result[k++] = secondArray[j++];
     }
     return result;

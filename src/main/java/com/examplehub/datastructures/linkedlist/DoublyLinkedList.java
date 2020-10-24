@@ -48,20 +48,20 @@ public class DoublyLinkedList<E> {
     }
     Node<E> newNode = new Node<>(data);
     if (head == null) {
-        /* the DoublyLinked list is empty */
+      /* the DoublyLinked list is empty */
       head = tail = newNode;
     } else if (index == 0) {
-        /* insert at head */
+      /* insert at head */
       head.prev = newNode;
       newNode.next = head;
       head = newNode;
     } else if (index == size) {
-        /* insert at tail */
+      /* insert at tail */
       tail.next = newNode;
       newNode.prev = tail;
       tail = newNode;
     } else {
-        /* insert at middle */
+      /* insert at middle */
       Node<E> temp = head;
       for (int i = 0; i < index; i++) {
         temp = temp.next;
@@ -105,7 +105,7 @@ public class DoublyLinkedList<E> {
     }
     Node<E> deleteNode;
     if (size == 1) {
-        /* just one node */
+      /* just one node */
       deleteNode = head;
       head = tail = null;
     } else if (index == 0) {

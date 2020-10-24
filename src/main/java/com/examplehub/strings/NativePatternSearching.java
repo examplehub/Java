@@ -12,7 +12,7 @@ public class NativePatternSearching {
           break;
         }
         if (j == pattern.length() - 1) {
-            /* pattern matched */
+          /* pattern matched */
           position.add(i);
         }
       }

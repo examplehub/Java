@@ -99,18 +99,18 @@ public class SinglyLinkedList<E> {
     }
     Node<E> newNode = new Node<>(data);
     if (head == null) {
-        /* SinglyLinkedList is empty */
+      /* SinglyLinkedList is empty */
       this.head = this.tail = newNode;
     } else if (index == 0) {
-        /* insert at head */
+      /* insert at head */
       newNode.next = head;
       this.head = newNode;
     } else if (index == size) {
-        /* insert at tail */
+      /* insert at tail */
       tail.next = newNode;
       tail = tail.next;
     } else {
-        /* insert at middle */
+      /* insert at middle */
       Node<E> temp = head;
       for (int i = 0; i < index - 1; ++i) {
         temp = temp.next;
@@ -161,7 +161,7 @@ public class SinglyLinkedList<E> {
     }
     Node<E> deleteNode;
     if (size == 1) {
-        /* just one node in SinglyLinkedList */
+      /* just one node in SinglyLinkedList */
       deleteNode = head;
       tail = head = null;
     } else if (index == 0) {
