@@ -19,14 +19,8 @@ jobs:
       with:
         java-version: 12
     - name: Google Java Format
-        ls
-        wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O format.jar
-        java -jar format.jar --replace --set-exit-if-changed $(find . -type f -name "*.java" | grep ".*/src/.*java")
-        if: failure()
         run: |
-          echo "hello world"
-          git config --global user.name github-actions
-          git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          git commit -am "Formatted with Google Java Format"
-          git push --force origin HEAD:$GITHUB_REF
+          ls
+          wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O format.jar
+          java -jar format.jar --replace --set-exit-if-changed $(find . -type f -name "*.java" | grep ".*/src/.*java")
+          git diff
