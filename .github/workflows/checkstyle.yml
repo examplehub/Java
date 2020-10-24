@@ -23,11 +23,15 @@ jobs:
           wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O format.jar
           ls
           java -jar format.jar --replace --set-exit-if-changed $(find . -type f -name "*.java" | grep ".*/src/.*java")
-      - name: Commit black changes
-        if: failure()
+      - if: failure()
         run: |
-          echo "success"
+          echo "format success"
           git diff
+#      - name: Commit black changes
+#        if: failure()
+#        run: |
+#          echo "success"
+#          git diff
 #          black .
 #          git config --global user.name github-actions
 #          git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
