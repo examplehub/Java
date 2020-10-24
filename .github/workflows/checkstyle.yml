@@ -1,6 +1,6 @@
 name: Code Formatter
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   lint:
@@ -14,11 +14,11 @@ jobs:
           java-version: 12
       - run: wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O formatter.jar
       - run: java -jar formatter.jar --replace --set-exit-if-changed $(find . -type f -name "*.java" | grep ".*/src/.*java")
-      - name: Commit black changes
+      - name: Commit Format changes
         if: failure()
         run: |
           git config --global user.name github-actions
           git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          git commit -am "Formatted with psf/black"
+          git commit -am "Formatted with Google Java Formatter"
           git push --force origin HEAD:$GITHUB_REF
