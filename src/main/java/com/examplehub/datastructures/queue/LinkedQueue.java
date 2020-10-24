@@ -63,7 +63,7 @@ public class LinkedQueue<E> {
     /**
      * Test if this queue is empty or not.
      *
-     * @return {@code true} if
+     * @return {@code true} if this queue is empty, otherwise {@code false}.
      */
     public boolean empty() {
         return size == 0;
