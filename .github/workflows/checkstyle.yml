@@ -13,16 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 12
-      uses: actions/setup-java@v1
-      with:
-        java-version: 12
-    - name: Format
-      run: ls
-#    - name: dfsdf
-#        run: |
-#          ls
-#          wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O format.jar
-#          java -jar format.jar --replace --set-exit-if-changed $(find . -type f -name "*.java" | grep ".*/src/.*java")
-#          git diff
+      - uses: actions/checkout@v2
+      - name: Set up JDK 12
+        uses: actions/setup-java@v1
+        with:
+          java-version: 12
+      - name: Format
+        run: wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar -O format.jar
+        run: java -jar format.jar --replace --set-exit-if-changed $(find . -type f -name "*.java" | grep ".*/src/.*java")
+        run: git diff
