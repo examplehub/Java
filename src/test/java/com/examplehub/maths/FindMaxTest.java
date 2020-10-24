@@ -1,32 +1,32 @@
 package com.examplehub.maths;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.examplehub.utils.RandomUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class FindMaxTest {
-    private int[] numbers;
+  private int[] numbers;
 
-    @BeforeEach
-    public void setup() {
-        numbers = RandomUtils.randomInts(-50, 50, 100);
-    }
+  @BeforeEach
+  public void setup() {
+    numbers = RandomUtils.randomInts(-50, 50, 100);
+  }
 
-    @Test
-    void testFindMax() {
-        int max = FindMax.findMax(numbers);
-        for (int number : numbers) {
-            assertTrue(max >= number);
-        }
+  @Test
+  void testFindMax() {
+    int max = FindMax.findMax(numbers);
+    for (int number : numbers) {
+      assertTrue(max >= number);
     }
+  }
 
-    @Test
-    void testFindMaxSecond() {
-        int max = FindMax.findMaxSecond(numbers);
-        for (int number : numbers) {
-            assertTrue(max >= number);
-        }
+  @Test
+  void testFindMaxSecond() {
+    int max = FindMax.findMaxSecond(numbers);
+    for (int number : numbers) {
+      assertTrue(max >= number);
     }
+  }
 }

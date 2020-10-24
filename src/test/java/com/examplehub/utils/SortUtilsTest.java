@@ -1,22 +1,21 @@
 package com.examplehub.utils;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.stream.IntStream;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 class SortUtilsTest {
 
-    @Test
-    void testIsSorted() {
-        int[] ints = IntStream.range(-50, 50).toArray();
-        assertTrue(SortUtils.isSorted(ints));
-    }
+  @Test
+  void testIsSorted() {
+    int[] ints = IntStream.range(-50, 50).toArray();
+    assertTrue(SortUtils.isSorted(ints));
+  }
 
-    @Test
-    void testIsSortedGeneric() {
-        Integer[] integers = IntStream.range(-50, 50).boxed().toArray(Integer[]::new);
-        assertTrue(SortUtils.isSorted(integers));
-    }
+  @Test
+  void testIsSortedGeneric() {
+    Integer[] integers = IntStream.range(-50, 50).boxed().toArray(Integer[]::new);
+    assertTrue(SortUtils.isSorted(integers));
+  }
 }
