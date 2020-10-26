@@ -1,8 +1,6 @@
 package com.examplehub.maths;
 
-/**
- * https://en.wikipedia.org/wiki/Lucas_number
- */
+/** https://en.wikipedia.org/wiki/Lucas_number */
 public class LucasNumbers {
 
   /**
