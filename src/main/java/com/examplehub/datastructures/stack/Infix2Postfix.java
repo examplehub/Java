@@ -1,7 +1,5 @@
 package com.examplehub.datastructures.stack;
 
-import com.examplehub.matrix.Precedences;
-
 import java.util.Stack;
 
 public class Infix2Postfix {
@@ -20,9 +18,9 @@ public class Infix2Postfix {
         while (!stack.isEmpty() && stack.peek() != '(') {
           output.append(stack.pop());
         }
-        if (!stack.isEmpty())stack.pop();
+        stack.pop();
       } else {
-        while (!stack.isEmpty() && Precedences.compare(element + "", stack.peek() + "") >= 0) {
+        while (!stack.isEmpty() && precedence(element) <= precedence(stack.peek())) {
           output.append(stack.pop());
         }
         stack.push(element);
@@ -32,5 +30,20 @@ public class Infix2Postfix {
       output.append(stack.pop());
     }
     return output.toString();
+  }
+
+  private static int precedence(char operator) {
+    switch (operator) {
+      case '+':
+      case '-':
+        return 0;
+      case '*':
+      case '/':
+        return 1;
+      case '^':
+        return 2;
+      default:
+        return -1;
+    }
   }
 }
