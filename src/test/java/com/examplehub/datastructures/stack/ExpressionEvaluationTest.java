@@ -13,5 +13,6 @@ class ExpressionEvaluationTest {
     assertEquals(0, 2 / 3);
     assertEquals(6, 2 * 3);
     assertEquals(80, ExpressionEvaluation.evaluate("1+(2*3^4)/2-2"));
+    assertEquals(80, ExpressionEvaluation.evaluate("1 + (2 * 3 ^ 4) / 2 - 2"));
   }
 }

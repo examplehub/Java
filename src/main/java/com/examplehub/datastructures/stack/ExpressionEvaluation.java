@@ -1,5 +1,7 @@
 package com.examplehub.datastructures.stack;
 
+import com.examplehub.strings.RemoveWhiteSpace;
+
 public class ExpressionEvaluation {
 
   /**
@@ -10,6 +12,8 @@ public class ExpressionEvaluation {
    * @throws Exception if {@code expression} is invalid.
    */
   public static int evaluate(String expression) throws Exception {
-    return PostfixEvaluation.evaluate(Infix2Postfix.infix2PostFix(expression));
+
+    return PostfixEvaluation.evaluate(
+        Infix2Postfix.infix2PostFix(RemoveWhiteSpace.removeWhitespace(expression)));
   }
 }
