@@ -39,6 +39,16 @@ public class ForLoop {
     }
     System.out.println("\n");
 
+    /*
+     * output:
+     * i = 0, j = 5
+     * i = 1, j = 4
+     * i = 2, j = 3
+     */
+    for (int i = 0, j = 5; i < j; i++, j--) {
+      System.out.println("i = " + i + ", j = " + j);
+    }
+
     int[] numbers = new int[5];
     for (int i = 0; i < numbers.length; i++) {
       numbers[i] = i + 1;
