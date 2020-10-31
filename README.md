@@ -28,6 +28,7 @@ Before you run this project. Please make sure you have `cloned` or [`Downloaded`
 * [dynamicprogramming](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/dynamicprogramming)
 * [leetcode](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/leetcode)
 * [maths](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/maths)
+* [matrix](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/matrix)
 * [projecteuler](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/projecteuler)
 * [searchs](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/searches)
 * [sorts](https://github.com/examplehub/Java/tree/master/src/main/java/com/examplehub/sorts)
