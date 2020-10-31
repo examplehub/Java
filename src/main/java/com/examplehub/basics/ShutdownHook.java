@@ -4,7 +4,8 @@ public class ShutdownHook {
   public static void main(String[] args) {
     Runtime.getRuntime()
         .addShutdownHook(
-                new Thread(() -> {
+            new Thread(
+                () -> {
                   /* do something when JVM is shutdown */
                   System.out.print("JVM is Shutdown");
                 }));
