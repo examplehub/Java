@@ -3,6 +3,14 @@ package com.examplehub.datastructures.stack;
 import java.util.Stack;
 
 public class Infix2Postfix {
+
+  /**
+   * Convert infix to postfix.
+   *
+   * @param infixExpression the infix expression.
+   * @return postfix expression.
+   * @throws Exception if infix expression is invalid.
+   */
   public static String infix2PostFix(String infixExpression) throws Exception {
     if (!BalancedParentheses.isBalanced(infixExpression)) {
       throw new Exception("invalid expression");
