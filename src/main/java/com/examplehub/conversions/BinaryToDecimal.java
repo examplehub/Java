@@ -1,7 +1,5 @@
 package com.examplehub.conversions;
 
-import com.examplehub.maths.Power;
-
 public class BinaryToDecimal {
 
   /**
@@ -13,9 +11,10 @@ public class BinaryToDecimal {
   public static int toDecimal(String binary) {
     int sum = 0;
     boolean isNegative = binary.charAt(0) == '-';
-    char[] binaryChar = (isNegative ? binary.substring(1) : binary).toCharArray();
-    for (int i = binaryChar.length - 1; i >= 0; i--) {
-      sum = sum + (binaryChar[i] - '0') * (int) Power.pow(2, binaryChar.length - 1 - i);
+    binary = (isNegative ? binary.substring(1) : binary);
+    int k = binary.length();
+    for (char digit : binary.toCharArray()) {
+      sum += (digit - '0') * (int) Math.pow(2, --k);
     }
     return isNegative ? -sum : sum;
   }
