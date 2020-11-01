@@ -11,9 +11,10 @@ public class BinaryToDecimal {
   public static int toDecimal(String binary) {
     int sum = 0;
     boolean isNegative = binary.charAt(0) == '-';
-    char[] binaryChar = (isNegative ? binary.substring(1) : binary).toCharArray();
-    for (int i = 0; i < binaryChar.length; i++) {
-      sum = sum + Character.getNumericValue(binaryChar[i]) * (int) Math.pow(2, binaryChar.length - 1 - i);
+    binary = (isNegative ? binary.substring(1) : binary);
+    int k = binary.length();
+    for (char digit : binary.toCharArray()) {
+      sum += (digit - '0') * (int) Math.pow(2, --k);
     }
     return isNegative ? -sum : sum;
   }
