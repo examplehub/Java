@@ -1,5 +1,7 @@
 package com.examplehub.datastructures.binarytree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringJoiner;
 
 public class BasicBinaryTree<E> {
@@ -10,6 +12,7 @@ public class BasicBinaryTree<E> {
   private final StringJoiner inOrderPath;
   private final StringJoiner preOrderPath;
   private final StringJoiner postOrderPath;
+  private final StringJoiner levelOrderPath;
 
   /**
    * Construct binary tree from root node.
@@ -21,6 +24,7 @@ public class BasicBinaryTree<E> {
     this.inOrderPath = new StringJoiner("->");
     this.preOrderPath = new StringJoiner("->");
     this.postOrderPath = new StringJoiner("->");
+    this.levelOrderPath = new StringJoiner("->");
   }
 
   public void inorder(Node<E> root) {
@@ -66,6 +70,28 @@ public class BasicBinaryTree<E> {
       postOrder(root);
     }
     return postOrderPath.toString();
+  }
+
+  public void levelOrder(Node<E> root) {
+    Queue<Node<E>> queue = new LinkedList<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+      Node<E> tempNode = queue.poll();
+      levelOrderPath.add(tempNode.value.toString());
+      if (tempNode.left != null) {
+        queue.add(tempNode.left);
+      }
+      if (tempNode.right != null) {
+        queue.add(tempNode.right);
+      }
+    }
+  }
+
+  public String getLevelOrder() {
+    if (levelOrderPath.length() == 0) {
+      levelOrder(root);
+    }
+    return levelOrderPath.toString();
   }
 
   @Override
