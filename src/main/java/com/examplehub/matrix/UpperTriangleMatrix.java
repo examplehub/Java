@@ -8,7 +8,7 @@ public class UpperTriangleMatrix {
     int[] dest = new int[length];
     int k = 0;
     for (int i = 0; i < src.length; i++) {
-      for (int j = i; j < src.length; j++){
+      for (int j = i; j < src.length; j++) {
         dest[k++] = src[i][j];
       }
     }
@@ -19,7 +19,7 @@ public class UpperTriangleMatrix {
     if (i > j) {
       return 0;
     }
-    int index = dest.length - SumToN.sum(i) - j; //TODO
+    int index = dest.length - SumToN.sum(i) - j; // TODO
     return dest[index];
   }
 }
