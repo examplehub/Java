@@ -21,3 +21,5 @@
 * Write `junit` to test all your functions.
 * Make sure build success using `gradle clean test` command.
 * Please follow [Java naming conventions](https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html).
+
+#### Thanks for your contribution 😊
