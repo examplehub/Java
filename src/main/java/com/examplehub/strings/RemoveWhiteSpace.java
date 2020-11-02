@@ -9,6 +9,6 @@ public class RemoveWhiteSpace {
    * @return string no whitespace.
    */
   public static String removeWhitespace(String s) {
-    return s.replaceAll(" ", "");
+    return s.replaceAll("\\s+", "");
   }
 }
