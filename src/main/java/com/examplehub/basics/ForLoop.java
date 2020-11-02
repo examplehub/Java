@@ -66,6 +66,32 @@ public class ForLoop {
     }
     System.out.println("\n");
 
+    /*
+     * 1 2 3 4 5
+     */
+    int x = 0;
+    while (true) {
+      x++;
+      System.out.print(x + "");
+      if (x == 5) {
+        break;
+      }
+    }
+    System.out.println();
+
+    /*
+     * 1 2 3 4 5
+     */
+    int i = 0;
+    do {
+      i++;
+      System.out.print(i + "");
+      if (i == 5) {
+        break;
+      }
+    } while (true);
+    System.out.println();
+
     /* infinite loop */
     /*
     for (; ; ) {
