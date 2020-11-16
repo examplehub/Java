@@ -33,5 +33,41 @@ public class Operator {
     System.out.println("4<<1 = " + (4 << 1));
     System.out.println("4>>1=" + (4 >> 1));
     System.out.println("4>>>1=" + (4 >>> 1));
+
+    System.out.println(3 == 3); /* true */
+    System.out.println(3 == 4); /* false */
+    System.out.println("helloworld" == "helloworld"); /* true */
+    String abc = "HelloWorld";
+    String abc1 = "HelloWorld";
+    System.out.println(abc == abc1); /* true */
+
+    System.out.println(3 != 3); /* false */
+    System.out.println(3 != 4); /* true */
+    System.out.println(3 > 4); /* false */
+    System.out.println(3 < 4); /* true */
+    System.out.println(3 >= 3); /* true */
+    System.out.println(3 <= 4); /* true */
+
+    int age = 3;
+    System.out.println("age = " + age); /* age = 3 */
+
+    age += 1; /* age = age + 1 */
+    System.out.println("age = " + age); /* age = 4 */
+
+    int number = 16;
+    System.out.println("number = " + number); /* number = 16 */
+    number >>= 1; /* number = number >> 1 */
+    System.out.println("number = " + number); /* number = 8 */
+
+    System.out.println(true && true); /* true */
+    System.out.println(true && false); /* false */
+    System.out.println(false && true); /* false */
+    System.out.println(false && false); /* false */
+
+    System.out.println(true || false); /* true */
+    System.out.println(false || false); /* false */
+
+    System.out.println(!true); /* false */
+    System.out.println(!false); /* true */
   }
 }
