@@ -9,7 +9,7 @@ public class MathExample {
     System.out.println(Math.abs(-3)); /* 3 */
     System.out.println(Math.random()); /* [0.0 - 1.0) */
 
-    int randomNumber = (int)(Math.random() * 100) + 1;
+    int randomNumber = (int) (Math.random() * 100) + 1;
     System.out.println(randomNumber); /* [1, 100] */
   }
 }
