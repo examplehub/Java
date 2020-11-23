@@ -2,6 +2,9 @@ package com.examplehub.leetcode.easy;
 
 import com.examplehub.datastructures.binarytree.Node;
 
+/**
+ * https://leetcode.com/problems/path-sum/
+ */
 public class PathSum {
   public static boolean solution1(Node<Integer> node, int sum) {
     if (node == null) {
