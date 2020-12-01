@@ -24,7 +24,6 @@ public class ScannerExample {
     char character = sc.next().charAt(0);
     System.out.println("character = " + character);
 
-
     sc.close();
   }
 }

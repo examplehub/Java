@@ -36,8 +36,6 @@ public class ConcurrentHashMapExample {
           "key = ".concat(entry.getKey() + "").concat(", value = ").concat(entry.getValue()));
     }
 
-
-
     System.out.println(map.get(3)); /* Python */
     System.out.println(map.getOrDefault(100, "Default value")); /* Default value */
 
