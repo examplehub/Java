@@ -12,6 +12,7 @@ public class SerializableExample {
     ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("user.data"));
     User newUser = (User) inputStream.readObject();
     System.out.println(newUser); /* User{id=1, username='root', password='root'} */
+    inputStream.close();
   }
 }
 
