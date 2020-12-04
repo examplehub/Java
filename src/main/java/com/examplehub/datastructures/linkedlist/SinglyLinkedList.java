@@ -179,6 +179,25 @@ public class SinglyLinkedList<E> {
     return deleteNode.data;
   }
 
+  /**
+   * Reverse singlyLinkedList
+   *
+   * @return reversed singlyLinkedList.
+   */
+  public SinglyLinkedList<E> reverse() {
+    Node<E> prev = null;
+    Node<E> current = this.head;
+    Node<E> next = null;
+    while (current != null) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    this.head = prev;
+    return this;
+  }
+
   @Override
   public String toString() {
     StringJoiner joiner = new StringJoiner("->");
