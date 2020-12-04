@@ -176,7 +176,7 @@ class SinglyLinkedListTest {
   }
 
   @Test
-  void testReverse(){
+  void testReverse() {
     SinglyLinkedList<String> singlyLinkedList = new SinglyLinkedList<>();
     singlyLinkedList.insertTail("1", "2", "3", "4", "5");
     assertEquals("1->2->3->4->5->NULL", singlyLinkedList.toString());
