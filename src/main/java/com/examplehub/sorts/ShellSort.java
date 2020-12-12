@@ -8,10 +8,10 @@ public class ShellSort implements Sort {
       for (int i = gap; i < length; ++i) {
         int temp = numbers[i];
         int j;
-        for (j = i; j >= gap && numbers[j - gap] > temp; j -= gap) {
-          numbers[j] = numbers[j - gap];
+        for (j = i - gap; j >= 0 && temp < numbers[j]; j -= gap) {
+          numbers[j + gap] = numbers[j];
         }
-        numbers[j] = temp;
+        numbers[j + gap] = temp;
       }
     }
   }
@@ -22,10 +22,10 @@ public class ShellSort implements Sort {
       for (int i = gap; i < length; ++i) {
         T temp = array[i];
         int j;
-        for (j = i; j >= gap && array[j - gap].compareTo(temp) > 0; j -= gap) {
-          array[j] = array[j - gap];
+        for (j = i - gap; j >= 0 && temp.compareTo(array[j]) < 0; j -= gap) {
+          array[j + gap] = array[j];
         }
-        array[j] = temp;
+        array[j + gap] = temp;
       }
     }
   }
