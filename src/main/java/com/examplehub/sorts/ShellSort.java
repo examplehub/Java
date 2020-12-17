@@ -6,12 +6,12 @@ public class ShellSort implements Sort {
   public void sort(int[] numbers) {
     for (int length = numbers.length, gap = length >> 1; gap > 0; gap >>= 1) {
       for (int i = gap; i < length; ++i) {
-        int temp = numbers[i];
+        int insertValue = numbers[i];
         int j;
-        for (j = i - gap; j >= 0 && temp < numbers[j]; j -= gap) {
+        for (j = i - gap; j >= 0 && insertValue < numbers[j]; j -= gap) {
           numbers[j + gap] = numbers[j];
         }
-        numbers[j + gap] = temp;
+        numbers[j + gap] = insertValue;
       }
     }
   }
@@ -20,12 +20,12 @@ public class ShellSort implements Sort {
   public <T extends Comparable<T>> void sort(T[] array) {
     for (int length = array.length, gap = length >> 1; gap > 0; gap >>= 1) {
       for (int i = gap; i < length; ++i) {
-        T temp = array[i];
+        T insertValue = array[i];
         int j;
-        for (j = i - gap; j >= 0 && temp.compareTo(array[j]) < 0; j -= gap) {
+        for (j = i - gap; j >= 0 && insertValue.compareTo(array[j]) < 0; j -= gap) {
           array[j + gap] = array[j];
         }
-        array[j + gap] = temp;
+        array[j + gap] = insertValue;
       }
     }
   }
