@@ -3,7 +3,7 @@ package com.examplehub.maths;
 public class PrimeCheck {
 
   /**
-   * Check if a number is prime or not.
+   * Check if a number is prime number or not.
    *
    * @param number the number to be checked.
    * @return {@code true} if the given {@code number} is prime, otherwise {@code false}.
