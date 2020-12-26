@@ -19,9 +19,7 @@ public class InsertionSortRecursion implements Sort {
     int insertValue = numbers[index];
     int i = index - 1;
     while (i >= 0 && insertValue < numbers[i]) {
-      int temp = numbers[i];
-      numbers[i] = numbers[i + 1];
-      numbers[i + 1] = temp;
+      numbers[i + 1] = numbers[i];
       i--;
     }
     if (i != index - 1) {
@@ -49,9 +47,7 @@ public class InsertionSortRecursion implements Sort {
     T insertValue = array[index];
     int i = index - 1;
     while (i >= 0 && insertValue.compareTo(array[i]) < 0) {
-      T temp = array[i];
-      array[i] = array[i + 1];
-      array[i + 1] = temp;
+      array[i + 1] = array[i];
       i--;
     }
     if (i != index - 1) {
