@@ -5,14 +5,15 @@ import java.io.*;
 public class SerializableExample {
   public static void main(String[] args) throws IOException, ClassNotFoundException {
     User user = new User(1, "root", "root");
-    ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream("user.data"));
-    stream.writeObject(user);
-    stream.close();
+    try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream("user.data"))) {
+      stream.writeObject(user);
+    }
 
-    ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("user.data"));
-    User newUser = (User) inputStream.readObject();
-    System.out.println(newUser); /* User{id=1, username='root', password='root'} */
-    inputStream.close();
+    try (ObjectInputStream inputStream =
+        new ObjectInputStream(new FileInputStream("user.data"))) {
+      User newUser = (User) inputStream.readObject();
+      System.out.println(newUser); /* User{id=1, username='root', password='root'} */
+    }
   }
 }
 
