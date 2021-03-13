@@ -2,6 +2,7 @@
 /build/
 .idea/
 target
+*.iml
 
 # Ignore Gradle GUI config
 gradle-app.setting
