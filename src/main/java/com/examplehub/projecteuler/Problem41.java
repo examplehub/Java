@@ -16,10 +16,6 @@ public class Problem41 {
         if (CharToInt.toInt(chars[j + 1]) - CharToInt.toInt(chars[j]) != 1) {
           break;
         }
-        if (j == chars.length - 1) {
-          System.out.println(i);
-          return i;
-        }
       }
     }
     return 0;
