@@ -1,8 +1,6 @@
 package com.examplehub.datastructures.binarytree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class BasicBinaryTree<E> {
 
@@ -127,5 +125,14 @@ public class BasicBinaryTree<E> {
     } else {
       return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
     }
+  }
+
+  /**
+   * Return the count number of nodes of binary tree.
+   * @param root the root node of binary tree.
+   * @return the count number of nodes of binary tree.
+   */
+  public int getNodeCount(Node<E> root) {
+    return root == null ? 0 : 1 + getNodeCount(root.left) + getNodeCount(root.right);
   }
 }
