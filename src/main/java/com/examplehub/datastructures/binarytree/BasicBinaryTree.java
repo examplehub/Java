@@ -129,6 +129,7 @@ public class BasicBinaryTree<E> {
 
   /**
    * Return the count number of nodes of binary tree.
+   *
    * @param root the root node of binary tree.
    * @return the count number of nodes of binary tree.
    */
