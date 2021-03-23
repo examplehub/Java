@@ -15,7 +15,7 @@ public class BasicBinaryTree<E> {
   private final StringJoiner levelOrderPath;
 
   /**
-   * Construct binary tree from root node.
+   * Constructor binary tree from root node.
    *
    * @param root the root node of binary tree.
    */
@@ -113,5 +113,19 @@ public class BasicBinaryTree<E> {
     root.left.right = new Node<>(5);
 
     return new BasicBinaryTree<>(root);
+  }
+
+  /**
+   * Return max depth of binary tree.
+   *
+   * @param root the root node of binary tree.
+   * @return max depth of binary tree.
+   */
+  public int maxDepth(Node<E> root) {
+    if (root == null) {
+      return 0;
+    } else {
+      return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+    }
   }
 }
