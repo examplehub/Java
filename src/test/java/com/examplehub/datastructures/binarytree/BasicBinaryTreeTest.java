@@ -9,9 +9,12 @@ class BasicBinaryTreeTest {
   @Test
   void testBasicBinaryTree() {
 
-    assertEquals("1->2->4->5->3", BasicBinaryTree.getBasicBinaryTree().getPreOrder());
-    assertEquals("4->2->5->1->3", BasicBinaryTree.getBasicBinaryTree().getInorder());
-    assertEquals("4->5->2->3->1", BasicBinaryTree.getBasicBinaryTree().getPostOrder());
-    assertEquals("1->2->3->4->5", BasicBinaryTree.getBasicBinaryTree().getLevelOrder());
+    BasicBinaryTree<Integer> binaryTree = BasicBinaryTree.getBasicBinaryTree();
+
+    assertEquals("1->2->4->5->3", binaryTree.getPreOrder());
+    assertEquals("4->2->5->1->3", binaryTree.getInorder());
+    assertEquals("4->5->2->3->1", binaryTree.getPostOrder());
+    assertEquals("1->2->3->4->5", binaryTree.getLevelOrder());
+    assertEquals(3, binaryTree.maxDepth(binaryTree.root));
   }
 }
