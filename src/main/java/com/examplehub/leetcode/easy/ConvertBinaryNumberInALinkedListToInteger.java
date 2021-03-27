@@ -7,12 +7,12 @@ import com.examplehub.leetcode.ListNode;
  */
 public class ConvertBinaryNumberInALinkedListToInteger {
 
-    public static int solution1(ListNode head) {
-        StringBuilder builder = new StringBuilder();
-        while (head != null) {
-            builder.append(head.val);
-            head = head.next;
-        }
-        return Integer.parseInt(builder.toString(), 2);
+  public static int solution1(ListNode head) {
+    StringBuilder builder = new StringBuilder();
+    while (head != null) {
+      builder.append(head.val);
+      head = head.next;
     }
+    return Integer.parseInt(builder.toString(), 2);
+  }
 }
