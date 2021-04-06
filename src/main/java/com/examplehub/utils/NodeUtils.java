@@ -30,4 +30,14 @@ public class NodeUtils {
     }
     return head;
   }
+
+  public static int length(ListNode head) {
+    int count = 0;
+    ListNode cur = head;
+    while (cur != null) {
+      cur = cur.next;
+      count++;
+    }
+    return count;
+  }
 }

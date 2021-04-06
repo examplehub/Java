@@ -2,6 +2,7 @@ package com.examplehub.leetcode.middle;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.examplehub.leetcode.ListNode;
 import org.junit.jupiter.api.Test;
 
 class AddTwoNumbersTest {
