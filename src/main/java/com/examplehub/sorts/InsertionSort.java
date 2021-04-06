@@ -9,14 +9,13 @@ public class InsertionSort implements Sort {
    */
   public void sort(int[] numbers) {
     for (int i = 1; i < numbers.length; ++i) {
-      int j = i - 1;
-      int key = numbers[i];
-      while (j >= 0 && key < numbers[j]) {
+      int insertValue = numbers[i];
+      int j;
+      for (j = i - 1; j >= 0 && insertValue < numbers[j]; --j) {
         numbers[j + 1] = numbers[j];
-        --j;
       }
       if (j != i - 1) {
-        numbers[j + 1] = key;
+        numbers[j + 1] = insertValue;
       }
     }
   }
@@ -29,13 +28,14 @@ public class InsertionSort implements Sort {
    */
   public <T extends Comparable<T>> void sort(T[] array) {
     for (int i = 1; i < array.length; ++i) {
-      int j = i - 1;
-      T key = array[i];
-      while (j >= 0 && key.compareTo(array[j]) < 0) {
+      T insertValue = array[i];
+      int j;
+      for (j = i - 1; j >= 0 && insertValue.compareTo(array[j]) < 0; --j) {
         array[j + 1] = array[j];
-        --j;
       }
-      array[j + 1] = key;
+      if (j != i - 1) {
+        array[j + 1] = insertValue;
+      }
     }
   }
 }
