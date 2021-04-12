@@ -1,6 +1,6 @@
 package com.examplehub.basics;
 
-public class SingleInheritanceExample {
+public class InheritanceExample {
     public static void main(String[] args) {
         Dog dog = new Dog();
         dog.bark(); /* barking... */
