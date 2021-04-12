@@ -18,9 +18,9 @@ class MergeSortTest {
 
   @Test
   void testSort() {
-    int[] numbers = new int[]{1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
+    int[] numbers = new int[] {1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
     sort.sort(numbers);
-    assertTrue(Arrays.equals(numbers, new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
+    assertTrue(Arrays.equals(numbers, new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
 
     int[] ints = RandomUtils.randomInts(-50, 50, 100);
     sort.sort(ints);
