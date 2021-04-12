@@ -35,7 +35,7 @@ public class ArrayList<E> {
   }
 
   /**
-   * Returns a elements at a given index.
+   * Returns a element at a given index.
    *
    * @param index the index of element to be returned.
    * @return element at a given index.
@@ -184,7 +184,7 @@ public class ArrayList<E> {
   /**
    * Check if this list contains no elements.
    *
-   * @return {@code true} if this list contains elements, otherwise {@code false}.
+   * @return {@code true} if this list contains no elements, otherwise {@code false}.
    */
   public boolean isEmpty() {
     return size == 0;
