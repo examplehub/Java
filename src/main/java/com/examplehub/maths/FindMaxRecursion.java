@@ -29,7 +29,7 @@ public class FindMaxRecursion {
     if (left == right) {
       return numbers[left];
     }
-    int middle = (left + right) >> 1;
+    int middle = left + (right - left) / 2;
     int leftMax = max(numbers, left, middle); /* find max in range[left, middle] */
     int rightMax = max(numbers, middle + 1, right); /* find max in range[middle + 1, right] */
     return Math.max(leftMax, rightMax);
