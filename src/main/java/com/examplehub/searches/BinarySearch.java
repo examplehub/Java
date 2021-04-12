@@ -14,7 +14,7 @@ public class BinarySearch implements Search {
     int left = 0;
     int right = numbers.length - 1;
     while (left <= right) {
-      int mid = (left + right) >> 1;
+      int mid = left + (right - left) / 2;
       if (key == numbers[mid]) {
         return mid;
       } else if (key > numbers[mid]) {
@@ -39,7 +39,7 @@ public class BinarySearch implements Search {
     int left = 0;
     int right = array.length - 1;
     while (left <= right) {
-      int mid = (left + right) >> 1;
+      int mid = left + (right - left) / 2;
       if (key.compareTo(array[mid]) == 0) {
         return mid;
       } else if (key.compareTo(array[mid]) > 0) {
