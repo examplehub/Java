@@ -63,6 +63,7 @@ class Counter {
     count++;
     return this;
   }
+
   public int getCount() {
     return count;
   }
