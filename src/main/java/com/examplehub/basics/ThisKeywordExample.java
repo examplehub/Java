@@ -13,6 +13,9 @@ public class ThisKeywordExample {
 
     rectangle = new Rectangle(1, 1, 3, 4);
     System.out.println(rectangle); /* Rectangle{x=1, y=1, width=3, height=4} */
+
+    Counter counter = new Counter();
+    System.out.println(counter.increment().increment().increment().getCount()); /* 3 */
   }
 }
 
@@ -50,5 +53,18 @@ class Rectangle {
   @Override
   public String toString() {
     return "Rectangle{" + "x=" + x + ", y=" + y + ", width=" + width + ", height=" + height + '}';
+  }
+}
+
+class Counter {
+  private int count = 0;
+
+  public Counter increment() {
+    count++;
+    return this;
+  }
+
+  public int getCount() {
+    return count;
   }
 }
