@@ -1,5 +1,7 @@
 package com.examplehub.sorts;
 
+import com.examplehub.maths.MiddleIndexCalculate;
+
 public class MergeSort implements Sort {
 
   @Override
@@ -21,7 +23,7 @@ public class MergeSort implements Sort {
    */
   public static void mergeSort(int[] numbers, int left, int right) {
     if (left < right) {
-      int middle = (left + right) >> 1;
+      int middle = MiddleIndexCalculate.middle(left, right);
       mergeSort(numbers, left, middle);
       mergeSort(numbers, middle + 1, right);
       merge(numbers, left, right);
