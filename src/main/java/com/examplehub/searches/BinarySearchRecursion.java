@@ -1,5 +1,7 @@
 package com.examplehub.searches;
 
+import com.examplehub.maths.MiddleIndexCalculate;
+
 public class BinarySearchRecursion implements Search {
 
   @Override
@@ -20,7 +22,7 @@ public class BinarySearchRecursion implements Search {
     if (left > right) {
       return -1;
     }
-    int mid = left + (right - left) / 2;
+    int mid = MiddleIndexCalculate.middle(left, right);
     if (key == numbers[mid]) {
       return mid;
     } else if (key >= numbers[mid]) {
@@ -49,7 +51,7 @@ public class BinarySearchRecursion implements Search {
     if (left > right) {
       return -1;
     }
-    int mid = left + (right - left) / 2;
+    int mid = MiddleIndexCalculate.middle(left, right);
     if (key.compareTo(array[mid]) == 0) {
       return mid;
     } else if (key.compareTo(array[mid]) > 0) {

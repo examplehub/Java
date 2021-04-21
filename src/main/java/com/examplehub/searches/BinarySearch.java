@@ -1,5 +1,7 @@
 package com.examplehub.searches;
 
+import com.examplehub.maths.MiddleIndexCalculate;
+
 public class BinarySearch implements Search {
 
   /**
@@ -14,7 +16,7 @@ public class BinarySearch implements Search {
     int left = 0;
     int right = numbers.length - 1;
     while (left <= right) {
-      int mid = left + (right - left) / 2;
+      int mid = MiddleIndexCalculate.middle(left, right);
       if (key == numbers[mid]) {
         return mid;
       } else if (key > numbers[mid]) {
