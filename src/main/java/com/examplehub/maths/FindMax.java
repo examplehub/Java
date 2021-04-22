@@ -20,7 +20,7 @@ public class FindMax {
     return max;
   }
 
-  public static int findMaxSecond(int ...numbers) {
+  public static int findMaxSecond(int... numbers) {
     return Arrays.stream(numbers).max().getAsInt();
   }
 }

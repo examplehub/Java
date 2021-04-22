@@ -1,8 +1,6 @@
 package com.examplehub.maths;
 
-/**
- * https://en.wikipedia.org/wiki/Fibonacci_number
- */
+/** https://en.wikipedia.org/wiki/Fibonacci_number */
 public class FibonacciRecursion {
 
   /**
