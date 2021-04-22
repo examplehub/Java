@@ -1,5 +1,6 @@
 package com.examplehub.maths;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.examplehub.utils.RandomUtils;
@@ -11,6 +12,7 @@ class EvenCheckTest {
   void isEven() {
     for (int i = -100; i <= 100; i += 2) {
       assertTrue(EvenCheck.isEven(i));
+      assertFalse(EvenCheck.isEven(i + 1));
     }
   }
 
@@ -18,11 +20,13 @@ class EvenCheckTest {
   void isEvenFaster() {
     for (int i = -100; i <= 100; i += 2) {
       assertTrue(EvenCheck.isEvenFaster(i));
+      assertFalse(EvenCheck.isEvenFaster(i + 1));
     }
   }
 
+  @Test
   void testSpeed() {
-    int[] ints = RandomUtils.randomInts(-1000, 1000, Integer.MAX_VALUE);
+    int[] ints = RandomUtils.randomInts(-1000, 1000, 99999999);
 
     long startTime = System.nanoTime();
     for (int j : ints) {
@@ -36,6 +40,6 @@ class EvenCheckTest {
     }
     long fasterTime = System.nanoTime() - startTime;
 
-    assertTrue(fasterTime < slowTime);
+    assertTrue(fasterTime <= slowTime);
   }
 }
