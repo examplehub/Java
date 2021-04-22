@@ -14,6 +14,20 @@ public class Add {
   }
 
   /**
+   * Add some integer numbers.
+   *
+   * @param numbers the numbers.
+   * @return sum of some numbers.
+   */
+  public static int add(int... numbers) {
+    int sum = 0;
+    for (int number : numbers) {
+      sum = sum + number;
+    }
+    return sum;
+  }
+
+  /**
    * Add two double numbers.
    *
    * @param a the first number.

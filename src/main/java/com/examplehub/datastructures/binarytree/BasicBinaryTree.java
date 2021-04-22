@@ -19,10 +19,10 @@ public class BasicBinaryTree<E> {
    */
   public BasicBinaryTree(Node<E> root) {
     this.root = root;
-    this.inOrderPath = new StringJoiner("->");
-    this.preOrderPath = new StringJoiner("->");
-    this.postOrderPath = new StringJoiner("->");
-    this.levelOrderPath = new StringJoiner("->");
+    inOrderPath = new StringJoiner("->");
+    preOrderPath = new StringJoiner("->");
+    postOrderPath = new StringJoiner("->");
+    levelOrderPath = new StringJoiner("->");
   }
 
   public void inorder(Node<E> root) {

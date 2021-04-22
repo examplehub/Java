@@ -13,5 +13,12 @@ class FactorialDPTest {
     assertEquals(6, FactorialDP.factorial(3));
     assertEquals(24, FactorialDP.factorial(4));
     assertEquals(120, FactorialDP.factorial(5));
+
+    try {
+      long result = FactorialDP.factorial(-1);
+      fail(); /* this won't happen */
+    } catch (ArithmeticException e) {
+      assertTrue(true); /* this will happen */
+    }
   }
 }
