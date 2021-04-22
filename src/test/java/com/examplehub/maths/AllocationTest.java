@@ -14,5 +14,7 @@ class AllocationTest {
     assertEquals(
         "[1-16666, 16667-33332, 33333-49998, 49999-66664, 66665-83330, 83331-100000]",
         Allocation.allocation(100000, 6).toString());
+
+    assertEquals("[1-10]", Allocation.allocation(10, 1).toString());
   }
 }

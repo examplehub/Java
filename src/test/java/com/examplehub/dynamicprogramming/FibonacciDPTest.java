@@ -11,5 +11,12 @@ class FibonacciDPTest {
     assertEquals(1, FibonacciDP.fibonacci(1));
     assertEquals(1, FibonacciDP.fibonacci(2));
     assertEquals(34, FibonacciDP.fibonacci(9));
+
+    try {
+      long result = FibonacciDP.fibonacci(-1);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertTrue(true);
+    }
   }
 }
