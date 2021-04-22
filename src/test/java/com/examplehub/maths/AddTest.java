@@ -2,9 +2,8 @@ package com.examplehub.maths;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.stream.IntStream;
+import org.junit.jupiter.api.Test;
 
 class AddTest {
 

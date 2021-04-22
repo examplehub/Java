@@ -8,8 +8,8 @@ class AbsoluteMinTest {
 
   @Test
   void testAbsoluteMin() {
-    assertEquals(1, AbsoluteMin.absoluteMin(new int[]{1, -2, 5, -8, 7}));
+    assertEquals(1, AbsoluteMin.absoluteMin(new int[] {1, -2, 5, -8, 7}));
 
-    assertEquals(1, AbsoluteMin.absoluteMin(new int[]{1, -2, 3, -4, 5}));
+    assertEquals(1, AbsoluteMin.absoluteMin(new int[] {1, -2, 3, -4, 5}));
   }
 }

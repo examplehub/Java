@@ -15,6 +15,7 @@ public class Add {
 
   /**
    * Add some integer numbers.
+   *
    * @param numbers the numbers.
    * @return sum of some numbers.
    */
