@@ -1,6 +1,6 @@
 package com.examplehub.maths;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.examplehub.utils.RandomUtils;
 import org.junit.jupiter.api.BeforeEach;

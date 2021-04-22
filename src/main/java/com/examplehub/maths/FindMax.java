@@ -10,7 +10,7 @@ public class FindMax {
    * @param numbers the numbers to be find.
    * @return max value of numbers.
    */
-  public static int findMax(int[] numbers) {
+  public static int findMax(int... numbers) {
     int max = numbers[0];
     for (int number : numbers) {
       if (number > max) {
@@ -20,7 +20,7 @@ public class FindMax {
     return max;
   }
 
-  public static int findMaxSecond(int[] numbers) {
+  public static int findMaxSecond(int... numbers) {
     return Arrays.stream(numbers).max().getAsInt();
   }
 }

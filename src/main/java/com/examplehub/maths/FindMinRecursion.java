@@ -29,7 +29,7 @@ public class FindMinRecursion {
     if (right == left) {
       return numbers[right];
     }
-    int middle = left + (right - left) / 2;
+    int middle = MiddleIndexCalculate.middle(left, right);
     int leftMin = min(numbers, left, middle); /* find min in range[left, middle] */
     int rightMin = min(numbers, middle + 1, right); /* find min in range[middle + 1, right] */
     return Math.min(leftMin, rightMin);

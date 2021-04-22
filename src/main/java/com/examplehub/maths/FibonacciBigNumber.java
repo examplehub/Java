@@ -2,6 +2,7 @@ package com.examplehub.maths;
 
 import java.math.BigDecimal;
 
+/** https://en.wikipedia.org/wiki/Fibonacci_number */
 public class FibonacciBigNumber {
 
   /**
