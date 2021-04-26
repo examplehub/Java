@@ -60,7 +60,8 @@ public class SinglyLinkedList<E> {
    *
    * @param items the items to be inserted.
    */
-  public void insertHead(E... items) {
+  @SafeVarargs
+  public final void insertHead(E... items) {
     for (E item : items) {
       insertHead(item);
     }
@@ -80,7 +81,8 @@ public class SinglyLinkedList<E> {
    *
    * @param items the items to be inserted.
    */
-  public void insertTail(E... items) {
+  @SafeVarargs
+  public final void insertTail(E... items) {
     for (E item : items) {
       insertTail(item);
     }
