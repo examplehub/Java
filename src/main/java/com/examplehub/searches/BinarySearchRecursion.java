@@ -25,7 +25,7 @@ public class BinarySearchRecursion implements Search {
     int mid = MiddleIndexCalculate.middle(left, right);
     if (key == numbers[mid]) {
       return mid;
-    } else if (key >= numbers[mid]) {
+    } else if (key > numbers[mid]) {
       return search(numbers, mid + 1, right, key); /* search at right sub array */
     } else {
       return search(numbers, left, mid - 1, key); /* search at left sub array */
