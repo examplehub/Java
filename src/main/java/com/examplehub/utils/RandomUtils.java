@@ -19,7 +19,7 @@ public class RandomUtils {
     int[] ints = new int[count];
     Random random = new Random();
     for (int i = 0; i < count; ++i) {
-      ints[i] = random.nextInt(max - min + 1) + min;
+      ints[i] = min + random.nextInt(max - min + 1);
     }
     return ints;
   }
