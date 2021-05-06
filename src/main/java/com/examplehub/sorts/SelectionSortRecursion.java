@@ -9,6 +9,7 @@ public class SelectionSortRecursion implements Sort {
 
   /**
    * Selection sort algorithm implements.
+   *
    * @param numbers the numbers to be sorted.
    * @param len the len of sub array.
    */
@@ -36,6 +37,7 @@ public class SelectionSortRecursion implements Sort {
 
   /**
    * Generic SelectionSort algorithm implements.
+   *
    * @param numbers the array to be sorted.
    * @param len the length of sub array.
    * @param <T> the class of the objects in the array.
