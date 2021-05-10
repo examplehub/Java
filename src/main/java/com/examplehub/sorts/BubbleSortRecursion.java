@@ -22,10 +22,9 @@ public class BubbleSortRecursion implements Sort {
         swapped = true;
       }
     }
-    if (!swapped) {
-      return;
+    if (swapped) {
+      sortRecursion(numbers, length - 1);
     }
-    sortRecursion(numbers, length - 1);
   }
 
   @Override
@@ -50,9 +49,8 @@ public class BubbleSortRecursion implements Sort {
         swapped = true;
       }
     }
-    if (!swapped) {
-      return;
+    if (swapped) {
+      sortRecursion(array, length - 1);
     }
-    sortRecursion(array, length - 1);
   }
 }
