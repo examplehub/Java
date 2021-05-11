@@ -11,7 +11,9 @@ public class ShellSort implements Sort {
         for (j = i - gap; j >= 0 && insertValue < numbers[j]; j -= gap) {
           numbers[j + gap] = numbers[j];
         }
-        numbers[j + gap] = insertValue;
+        if (j != i - gap) {
+          numbers[j + gap] = insertValue;
+        }
       }
     }
   }
@@ -25,7 +27,9 @@ public class ShellSort implements Sort {
         for (j = i - gap; j >= 0 && insertValue.compareTo(array[j]) < 0; j -= gap) {
           array[j + gap] = array[j];
         }
-        array[j + gap] = insertValue;
+        if (j != i - gap) {
+          array[j + gap] = insertValue;
+        }
       }
     }
   }
