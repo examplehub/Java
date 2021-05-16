@@ -1,7 +1,7 @@
 package com.examplehub.datastructures.array;
 
 /**
- *
+ * https://en.wikipedia.org/wiki/Sparse_matrix
  */
 public class SparseArray {
 
