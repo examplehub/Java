@@ -32,7 +32,7 @@ public class Queue<E> {
     this.queue = tempQueue;
     this.capacity = capacity;
     this.front = 0;
-    this.rear = this.capacity - 1;
+    this.rear = -1;
     this.size = 0;
   }
 
@@ -132,12 +132,10 @@ public class Queue<E> {
   public String toString() {
     StringJoiner joiner = new StringJoiner(", ", "[", "]");
     if (!empty()) {
-      for (int i = front; ; i = (i + 1) % capacity) {
+      for (int i = front; i != rear; i = (i + 1) % capacity) {
         joiner.add(queue[i].toString());
-        if (i == rear) {
-          break;
-        }
       }
+      joiner.add(queue[rear].toString());
     }
     return joiner.toString();
   }
