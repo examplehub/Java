@@ -18,10 +18,8 @@ public class SumOfFactorial {
       return 1 + 2; /* 1! + 2! */
     } else {
       /**
-       * sum(n)=1! + 2! + 3! + ... + (n-1)! + n!
-       *       = sum(n-1) + n!
-       *       = sum(n-1) + (n-1)! * n
-       *       = sum(n-1) + (sum(n-1) - sum(n-2))*n
+       * sum(n)=1! + 2! + 3! + ... + (n-1)! + n! = sum(n-1) + n! = sum(n-1) + (n-1)! * n = sum(n-1)
+       * + (sum(n-1) - sum(n-2))*n
        */
       return sum(n - 1) + (sum(n - 1) - sum(n - 2)) * n;
     }
