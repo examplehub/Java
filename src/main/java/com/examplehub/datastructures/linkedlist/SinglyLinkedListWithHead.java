@@ -123,6 +123,16 @@ class SinglyLinkedListWithHead<E> {
     return deleteTail();
   }
 
+  public E delete(E target) {
+    Node cur = head;
+    while (cur != null && cur.next != null && !cur.next.data.equals(target)) {
+      cur = cur.next;
+    }
+    Node deletedNode = cur.next;
+    cur.next = cur.next.next;
+    return (E) deletedNode.data;
+  }
+
   /**
    * Delete a node at the head of SinglyLinkedList.
    *
