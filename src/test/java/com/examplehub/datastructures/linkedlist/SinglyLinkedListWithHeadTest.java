@@ -81,6 +81,19 @@ class SinglyLinkedListWithHeadTest {
   }
 
   @Test
+  void deleteTarget() {
+    SinglyLinkedListWithHead<String> singlyLinkedList = new SinglyLinkedListWithHead<>();
+    for (int i = 0; i < 5; ++i) {
+      singlyLinkedList.insert(i + "");
+    }
+    assertEquals("0->1->2->3->4->NULL", singlyLinkedList.toString());
+    assertEquals("0", singlyLinkedList.delete("0"));
+    assertEquals("3", singlyLinkedList.delete("3"));
+    assertEquals("4", singlyLinkedList.delete("4"));
+    assertEquals("1->2->NULL", singlyLinkedList.toString());
+  }
+
+  @Test
   void deleteHead() {
     SinglyLinkedListWithHead<String> singlyLinkedList = new SinglyLinkedListWithHead<>();
     for (int i = 0; i < 5; ++i) {
