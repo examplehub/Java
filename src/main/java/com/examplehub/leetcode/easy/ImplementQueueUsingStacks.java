@@ -2,40 +2,39 @@ package com.examplehub.leetcode.easy;
 
 import java.util.Stack;
 
-/**
- * https://leetcode.com/problems/implement-queue-using-stacks/
- */
+/** https://leetcode.com/problems/implement-queue-using-stacks/ */
 public class ImplementQueueUsingStacks {
-    private Stack firstStack;
-    private Stack secondStack;
-    public ImplementQueueUsingStacks() {
-        firstStack = new Stack<>();
-        secondStack = new Stack<>();
-    }
+  private Stack firstStack;
+  private Stack secondStack;
 
-    public void push(int x) {
-        firstStack.push(x);
-    }
+  public ImplementQueueUsingStacks() {
+    firstStack = new Stack<>();
+    secondStack = new Stack<>();
+  }
 
-    public int pop() {
-        if (secondStack.isEmpty()) {
-            while (!firstStack.isEmpty()) {
-                secondStack.push(firstStack.pop());
-            }
-        }
-        return secondStack.isEmpty() ? -1 : (int) secondStack.pop();
-    }
+  public void push(int x) {
+    firstStack.push(x);
+  }
 
-    public int peek() {
-        if (secondStack.isEmpty()) {
-            while (!firstStack.isEmpty()) {
-                secondStack.push(firstStack.pop());
-            }
-        }
-        return secondStack.isEmpty() ? -1 : (int) secondStack.peek();
+  public int pop() {
+    if (secondStack.isEmpty()) {
+      while (!firstStack.isEmpty()) {
+        secondStack.push(firstStack.pop());
+      }
     }
+    return secondStack.isEmpty() ? -1 : (int) secondStack.pop();
+  }
 
-    public boolean empty() {
-        return firstStack.isEmpty() && secondStack.isEmpty();
+  public int peek() {
+    if (secondStack.isEmpty()) {
+      while (!firstStack.isEmpty()) {
+        secondStack.push(firstStack.pop());
+      }
     }
+    return secondStack.isEmpty() ? -1 : (int) secondStack.peek();
+  }
+
+  public boolean empty() {
+    return firstStack.isEmpty() && secondStack.isEmpty();
+  }
 }
