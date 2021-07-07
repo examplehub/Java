@@ -18,6 +18,6 @@ public class ReplaceWhiteSpace {
         }
       }
     }
-    return String.valueOf(chars);
+    return String.valueOf(chars).trim();
   }
 }
