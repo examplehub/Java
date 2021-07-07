@@ -12,8 +12,6 @@ class ReplaceWhiteSpaceTest {
 
   @Test
   void testSolution2() {
-    // FIXME
-    //        assertEquals("We%20are%20happy.", ReplaceWhiteSpace.solution2("We are happy.",
-    // "%20"));
+    assertEquals("We%20are%20happy.", ReplaceWhiteSpace.solution2("We are happy.", "%20"));
   }
 }
