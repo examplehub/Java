@@ -10,7 +10,6 @@ public class AdjacencyMatrix<E> {
   private final int[][] adj;
   private final boolean[] visited;
   int numOfVertex;
-  private final StringJoiner dfsPath = new StringJoiner("->");
 
   public AdjacencyMatrix(E[] vertex) {
     this.vertex = vertex;
@@ -30,12 +29,12 @@ public class AdjacencyMatrix<E> {
     adj[i][j] = adj[j][i] = 1;
   }
 
-  public void deepFirstSearch(int start) {
-    dfsPath.add(vertex[start].toString());
+  public void deepFirstSearch(StringJoiner joiner, int start) {
+    joiner.add(vertex[start].toString());
     visited[start] = true;
     for (int i = 0; i < numOfVertex; ++i) {
       if (adj[start][i] == 1 && !visited[i]) {
-        deepFirstSearch(i);
+        deepFirstSearch(joiner, i);
       }
     }
   }
@@ -55,10 +54,9 @@ public class AdjacencyMatrix<E> {
   }
 
   public String dfsPath() {
-    if (dfsPath.length() == 0) {
-      deepFirstSearch(0);
-    }
-    return dfsPath.toString();
+    StringJoiner joiner = new StringJoiner("->");
+    deepFirstSearch(joiner, 0);
+    return joiner.toString();
   }
 
   List<String> findAllPath(E startVertex, E endVertex) {
