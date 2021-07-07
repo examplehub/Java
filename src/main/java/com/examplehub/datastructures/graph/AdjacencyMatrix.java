@@ -11,6 +11,7 @@ public class AdjacencyMatrix<E> {
   private final boolean[] visited;
   int numOfVertex;
   private final StringJoiner dfsPath = new StringJoiner("->");
+
   public AdjacencyMatrix(E[] vertex) {
     this.vertex = vertex;
     this.numOfVertex = vertex.length;
