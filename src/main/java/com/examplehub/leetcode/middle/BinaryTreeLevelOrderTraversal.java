@@ -6,6 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * https://leetcode.com/problems/binary-tree-level-order-traversal/
+ */
 public class BinaryTreeLevelOrderTraversal {
   public static List<List<Integer>> solution1(TreeNode root) {
     if (root == null) {
