@@ -1,6 +1,5 @@
 package com.examplehub.leetcode.easy;
 
-import com.examplehub.datastructures.binarytree.Node;
 import com.examplehub.leetcode.TreeNode;
 
 /** https://leetcode.com/problems/path-sum/ */
