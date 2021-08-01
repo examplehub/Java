@@ -24,7 +24,7 @@ public class SelectionSortRecursion implements Sort {
         }
       }
       if (maxIndex != len - 1) {
-        SortUtils.swap(numbers,len - 1, maxIndex);
+        SortUtils.swap(numbers, len - 1, maxIndex);
       }
       selectionSort(numbers, len - 1);
     }
