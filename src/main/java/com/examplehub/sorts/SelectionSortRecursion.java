@@ -1,5 +1,7 @@
 package com.examplehub.sorts;
 
+import com.examplehub.utils.SortUtils;
+
 public class SelectionSortRecursion implements Sort {
 
   @Override
@@ -22,9 +24,7 @@ public class SelectionSortRecursion implements Sort {
         }
       }
       if (maxIndex != len - 1) {
-        int temp = numbers[maxIndex];
-        numbers[maxIndex] = numbers[len - 1];
-        numbers[len - 1] = temp;
+        SortUtils.swap(numbers, len - 1, maxIndex);
       }
       selectionSort(numbers, len - 1);
     }
@@ -51,9 +51,7 @@ public class SelectionSortRecursion implements Sort {
         }
       }
       if (maxIndex != len - 1) {
-        T temp = numbers[maxIndex];
-        numbers[maxIndex] = numbers[len - 1];
-        numbers[len - 1] = temp;
+        SortUtils.swap(numbers, len - 1, maxIndex);
       }
       selectionSort(numbers, len - 1);
     }

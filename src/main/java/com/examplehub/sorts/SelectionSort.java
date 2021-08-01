@@ -1,5 +1,7 @@
 package com.examplehub.sorts;
 
+import com.examplehub.utils.SortUtils;
+
 public class SelectionSort implements Sort {
 
   @Override
@@ -12,9 +14,7 @@ public class SelectionSort implements Sort {
         }
       }
       if (minIndex != i) {
-        int temp = numbers[i];
-        numbers[i] = numbers[minIndex];
-        numbers[minIndex] = temp;
+        SortUtils.swap(numbers, i, minIndex);
       }
     }
   }

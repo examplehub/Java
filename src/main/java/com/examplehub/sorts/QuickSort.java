@@ -1,5 +1,7 @@
 package com.examplehub.sorts;
 
+import com.examplehub.utils.SortUtils;
+
 public class QuickSort implements Sort {
 
   @Override
@@ -13,12 +15,14 @@ public class QuickSort implements Sort {
       while (left < right && number[right] >= pivot) {
         right--;
       }
-      number[left] = number[right];
-
       while (left < right && number[left] <= pivot) {
         left++;
       }
-      number[right] = number[left];
+      if (left < right) {
+        SortUtils.swap(number, left, right);
+        left++;
+        right--;
+      }
     }
     number[left] = pivot;
     return left;
@@ -54,12 +58,14 @@ public class QuickSort implements Sort {
       while (left < right && array[right].compareTo(pivot) >= 0) {
         right--;
       }
-      array[left] = array[right];
-
       while (left < right && array[left].compareTo(pivot) <= 0) {
         left++;
       }
-      array[right] = array[left];
+      if (left < right) {
+        SortUtils.swap(array, left, right);
+        left++;
+        right--;
+      }
     }
     array[left] = pivot;
     return left;

@@ -1,5 +1,7 @@
 package com.examplehub.sorts;
 
+import com.examplehub.utils.SortUtils;
+
 public class BubbleSort implements Sort {
 
   /**
@@ -12,9 +14,7 @@ public class BubbleSort implements Sort {
       boolean swapped = false;
       for (int j = 0; j < numbers.length - 1 - i; ++j) {
         if (numbers[j] > numbers[j + 1]) {
-          int temp = numbers[j];
-          numbers[j] = numbers[j + 1];
-          numbers[j + 1] = temp;
+          SortUtils.swap(numbers, j, j + 1);
           swapped = true;
         }
       }
@@ -35,9 +35,7 @@ public class BubbleSort implements Sort {
       boolean swapped = false;
       for (int j = 0; j < array.length - 1 - i; ++j) {
         if (array[j].compareTo(array[j + 1]) > 0) {
-          T temp = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = temp;
+          SortUtils.swap(array, j, j + 1);
           swapped = true;
         }
       }

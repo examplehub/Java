@@ -32,4 +32,31 @@ public class SortUtils {
     }
     return true;
   }
+
+  /**
+   * Swap two elements of array.
+   *
+   * @param array the array contains elements
+   * @param i the first index
+   * @param j the second index
+   */
+  public static void swap(int[] array, int i, int j) {
+    int temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  /**
+   * Swap two elements of array.
+   *
+   * @param array the array contains elements
+   * @param i the first index
+   * @param j the second index
+   * @param <T> the class of the objects in the array.
+   */
+  public static <T extends Comparable<T>> void swap(T[] array, int i, int j) {
+    T temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 }

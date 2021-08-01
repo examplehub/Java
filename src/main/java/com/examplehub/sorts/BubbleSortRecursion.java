@@ -1,5 +1,7 @@
 package com.examplehub.sorts;
 
+import com.examplehub.utils.SortUtils;
+
 public class BubbleSortRecursion implements Sort {
   @Override
   public void sort(int[] numbers) {
@@ -16,9 +18,7 @@ public class BubbleSortRecursion implements Sort {
     boolean swapped = false;
     for (int i = 0; i < length - 1; ++i) {
       if (numbers[i] > numbers[i + 1]) {
-        int temp = numbers[i];
-        numbers[i] = numbers[i + 1];
-        numbers[i + 1] = temp;
+        SortUtils.swap(numbers, i, i + 1);
         swapped = true;
       }
     }
@@ -43,9 +43,7 @@ public class BubbleSortRecursion implements Sort {
     boolean swapped = false;
     for (int i = 0; i < length - 1; ++i) {
       if (array[i].compareTo(array[i + 1]) > 0) {
-        T temp = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = temp;
+        SortUtils.swap(array, i, i + 1);
         swapped = true;
       }
     }
