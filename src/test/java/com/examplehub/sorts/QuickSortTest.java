@@ -23,7 +23,7 @@ class QuickSortTest {
     sort.sort(ints);
     assertTrue(SortUtils.isSorted(ints));
 
-    ints = new int[]{0, 1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
+    ints = new int[] {0, 1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
     sort.sort(ints);
     assertTrue(SortUtils.isSorted(ints));
   }
