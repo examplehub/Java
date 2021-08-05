@@ -1,75 +1,94 @@
 package com.examplehub.datastructures.graph;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class AdjacencyMatrix<E> {
   private final E[] vertex;
   private final int[][] adj;
-  private final boolean[] visited;
   int numOfVertex;
 
   public AdjacencyMatrix(E[] vertex) {
     this.vertex = vertex;
     this.numOfVertex = vertex.length;
     this.adj = new int[numOfVertex][numOfVertex];
-    this.visited = new boolean[numOfVertex];
   }
 
   public AdjacencyMatrix(E[] vertex, int[][] adj) {
     this.vertex = vertex;
     this.adj = adj;
     this.numOfVertex = vertex.length;
-    this.visited = new boolean[numOfVertex];
   }
 
   public void addEdge(int i, int j) {
     adj[i][j] = adj[j][i] = 1;
   }
 
-  public void deepFirstSearch(StringJoiner joiner, int start) {
+  public void removeEdge(int i, int j) {
+    adj[i][j] = adj[j][i] = 0;
+  }
+
+  public void deepFirstSearch(StringJoiner joiner, int start, boolean[] visited) {
     joiner.add(vertex[start].toString());
     visited[start] = true;
     for (int i = 0; i < numOfVertex; ++i) {
       if (adj[start][i] == 1 && !visited[i]) {
-        deepFirstSearch(joiner, i);
+        deepFirstSearch(joiner, i, visited);
       }
     }
   }
 
-  public int getVertexDegree(E v) {
-    int row = -1;
-    for (int i = 0; i < numOfVertex; i++) {
+  private int getVertexIndex(E v) {
+    for (int i = 0; i < numOfVertex; ++i) {
       if (vertex[i].equals(v)) {
-        row = i;
+        return i;
       }
     }
+    return -1;
+  }
+
+  public int getVertexDegree(E v) {
+    int index = getVertexIndex(v);
     int sum = 0;
-    for (int i = 0; i < numOfVertex; ++i) {
-      sum += adj[row][i];
+    for (int j = 0; j < numOfVertex; ++j) {
+      sum += adj[index][j];
     }
     return sum;
   }
 
   public String dfsPath() {
     StringJoiner joiner = new StringJoiner("->");
-    deepFirstSearch(joiner, 0);
+    boolean[] visited = new boolean[numOfVertex];
+    deepFirstSearch(joiner, 0, visited);
     return joiner.toString();
   }
 
-  List<String> findAllPath(E startVertex, E endVertex) {
-    int start = -1;
-    int end = -1;
-    for (int i = 0; i < numOfVertex; ++i) {
-      if (startVertex == vertex[i]) {
-        start = i;
-      }
-      if (endVertex == vertex[i]) {
-        end = i;
+  public String bfsPath() {
+    StringJoiner joiner = new StringJoiner("->");
+    boolean visited[] = new boolean[numOfVertex];
+    breadthFirstSearch(joiner, 0);
+    return joiner.toString();
+  }
+
+  private void breadthFirstSearch(StringJoiner joiner, int start) {
+    boolean[] visited = new boolean[numOfVertex];
+    Queue<Integer> queue = new LinkedList<>();
+    queue.offer(start);
+    visited[start] = true;
+    while (!queue.isEmpty()) {
+      int popIndex = queue.poll();
+      joiner.add(vertex[popIndex].toString());
+      for (int j = 0; j < numOfVertex; ++j) {
+        if (adj[popIndex][j] == 1 && !visited[j]) {
+          queue.offer(j);
+          visited[j] = true;
+        }
       }
     }
+  }
+
+  List<String> findAllPath(E startVertex, E endVertex) {
+    int start = getVertexIndex(startVertex);
+    int end = getVertexIndex(endVertex);
     return (start == -1 || end == -1) ? null : findAllPath(start, end);
   }
 
