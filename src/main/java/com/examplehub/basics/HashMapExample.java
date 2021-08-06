@@ -1,5 +1,3 @@
 package com.examplehub.basics;
 
-public class HashMapExample {
-
-}
+public class HashMapExample {}
