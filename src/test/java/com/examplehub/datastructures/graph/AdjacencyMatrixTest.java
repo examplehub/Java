@@ -66,4 +66,52 @@ class AdjacencyMatrixTest {
 
     assertNull(adjacencyMatrix.findAllPath("A", "F"));
   }
+
+  @Test
+  void testAddEdge() {
+    String[] vertex = {"A", "B", "C", "D", "E"};
+    AdjacencyMatrix<String> adjacencyMatrix = new AdjacencyMatrix<>(vertex);
+    adjacencyMatrix.addEdge(0, 1); /* A - B */
+    adjacencyMatrix.addEdge(0, 2); /* A - C */
+    adjacencyMatrix.addEdge(0, 3); /* A - D */
+    adjacencyMatrix.addEdge(1, 3); /* B - D */
+    adjacencyMatrix.addEdge(2, 3); /* C - D */
+    adjacencyMatrix.addEdge(1, 4); /* B - E */
+    adjacencyMatrix.addEdge(3, 4); /* D - E */
+
+    adjacencyMatrix.addEdge(1, 2); /* B - C */
+    assertEquals("A->B->C->D->E", adjacencyMatrix.dfsPath());
+  }
+
+  @Test
+  void testRemoveEdge() {
+    String[] vertex = {"A", "B", "C", "D", "E"};
+    AdjacencyMatrix<String> adjacencyMatrix = new AdjacencyMatrix<>(vertex);
+    adjacencyMatrix.addEdge(0, 1); /* A - B */
+    adjacencyMatrix.addEdge(0, 2); /* A - C */
+    adjacencyMatrix.addEdge(0, 3); /* A - D */
+    adjacencyMatrix.addEdge(1, 3); /* B - D */
+    adjacencyMatrix.addEdge(2, 3); /* C - D */
+    adjacencyMatrix.addEdge(1, 4); /* B - E */
+    adjacencyMatrix.addEdge(3, 4); /* D - E */
+
+    adjacencyMatrix.removeEdge(0, 1);
+    adjacencyMatrix.removeEdge(0, 2);
+    assertEquals("A->D->B->E->C", adjacencyMatrix.dfsPath());
+  }
+
+  @Test
+  void testBFS() {
+    String[] vertex = {"A", "B", "C", "D", "E"};
+    AdjacencyMatrix<String> adjacencyMatrix = new AdjacencyMatrix<>(vertex);
+    adjacencyMatrix.addEdge(0, 1); /* A - B */
+    adjacencyMatrix.addEdge(0, 2); /* A - C */
+    adjacencyMatrix.addEdge(0, 3); /* A - D */
+    adjacencyMatrix.addEdge(1, 3); /* B - D */
+    adjacencyMatrix.addEdge(2, 3); /* C - D */
+    adjacencyMatrix.addEdge(1, 4); /* B - E */
+    adjacencyMatrix.addEdge(3, 4); /* D - E */
+
+    assertEquals("A->B->C->D->E", adjacencyMatrix.bfsPath());
+  }
 }
