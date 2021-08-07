@@ -7,6 +7,7 @@ import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 class HashMapExampleTest {
+
   @Test
   void testPut() {
     HashMap<String, String> hashMap = new HashMap<>();
@@ -16,6 +17,28 @@ class HashMapExampleTest {
 
     assertNull(hashMap.put("bio", "Github"));
     assertEquals("Github", hashMap.put("bio", "I love coding"));
+  }
+
+  @Test
+  void testPutAll() {
+    Map<String, String> map = Map.of("username", "admin", "password", "abc123");
+    HashMap<String, String> hashMap = new HashMap<>();
+    hashMap.putAll(map);
+    System.out.println(hashMap);
+  }
+
+  @Test
+  void testPutIfAbsent() {
+    HashMap<String, String> hashMap = new HashMap<>();
+    hashMap.put("username", "admin");
+    hashMap.put("password", null);
+    assertEquals("admin", hashMap.putIfAbsent("username", "ADMIN"));
+    assertNull(hashMap.put("password", "abc123"));
+    assertNull(hashMap.putIfAbsent("bio", "I love coding"));
+
+    assertEquals("admin", hashMap.get("username"));
+    assertEquals("abc123", hashMap.get("password"));
+    assertEquals("I love coding", hashMap.get("bio"));
   }
 
   @Test
@@ -38,6 +61,26 @@ class HashMapExampleTest {
     assertNull(hashMap.get("bio"));
 
     assertEquals("jack", hashMap.getOrDefault("user", "jack"));
+  }
+
+  @Test
+  void testContainsKey() {
+    HashMap<String, String> hashMap = new HashMap<>();
+    hashMap.put("username", "admin");
+    hashMap.put("password", "abc123");
+    assertTrue(hashMap.containsKey("username"));
+    assertTrue(hashMap.containsKey("password"));
+    assertFalse(hashMap.containsKey("bio"));
+  }
+
+  @Test
+  void testContainsValue() {
+    HashMap<String, String> hashMap = new HashMap<>();
+    hashMap.put("username", "admin");
+    hashMap.put("password", "abc123");
+    assertTrue(hashMap.containsValue("admin"));
+    assertTrue(hashMap.containsValue("abc123"));
+    assertFalse(hashMap.containsValue("I love coding"));
   }
 
   @Test
@@ -68,6 +111,12 @@ class HashMapExampleTest {
     hashMap.put("username", "admin");
     hashMap.put("password", "abc123");
     assertEquals("[password, username]", hashMap.keySet().toString());
+
+    // password->abc123
+    // username->admin
+    for (String key : hashMap.keySet()) {
+      System.out.println(key + "->" + hashMap.get(key));
+    }
   }
 
   @Test
