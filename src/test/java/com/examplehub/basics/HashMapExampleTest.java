@@ -74,7 +74,7 @@ class HashMapExampleTest {
   }
 
   @Test
-  void testContainsValue(){
+  void testContainsValue() {
     HashMap<String, String> hashMap = new HashMap<>();
     hashMap.put("username", "admin");
     hashMap.put("password", "abc123");
@@ -112,8 +112,8 @@ class HashMapExampleTest {
     hashMap.put("password", "abc123");
     assertEquals("[password, username]", hashMap.keySet().toString());
 
-    //password->abc123
-    //username->admin
+    // password->abc123
+    // username->admin
     for (String key : hashMap.keySet()) {
       System.out.println(key + "->" + hashMap.get(key));
     }
