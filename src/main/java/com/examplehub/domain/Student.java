@@ -18,6 +18,7 @@ public class Student implements Comparable<Student> {
   public int getTotal() {
     return this.getChinese() + this.getMath() + this.getEnglish();
   }
+
   public int getId() {
     return id;
   }
