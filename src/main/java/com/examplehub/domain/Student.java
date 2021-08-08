@@ -15,6 +15,9 @@ public class Student implements Comparable<Student> {
     this.english = english;
   }
 
+  public int getTotal() {
+    return this.getChinese() + this.getMath() + this.getEnglish();
+  }
   public int getId() {
     return id;
   }
@@ -49,12 +52,14 @@ public class Student implements Comparable<Student> {
 
   @Override
   public int compareTo(Student o) {
-    if (this.Chinese + this.math + this.english != o.getChinese() + o.getMath() + o.getMath()) {
-      return o.getChinese() + o.getMath() + o.getMath() - this.Chinese - this.math - this.english;
-    } else if (this.Chinese != o.getChinese()) {
-      return o.getChinese() - this.Chinese;
+    if (this.getTotal() != o.getTotal()) {
+      return this.getTotal() - o.getTotal();
+    } else if (this.getChinese() != o.getChinese()) {
+      return this.getChinese() - o.getChinese();
+    } else if (this.getMath() != o.getMath()) {
+      return this.getMath() - o.getMath();
     } else {
-      return o.getMath() - this.math;
+      return this.getMath() - o.getMath();
     }
   }
 
