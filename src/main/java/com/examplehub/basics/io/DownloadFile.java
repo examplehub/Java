@@ -33,6 +33,7 @@ public class DownloadFile {
     public static boolean solution2(String url, String to) throws IOException {
         BufferedInputStream bufferedInputStream = new BufferedInputStream(new URL(url).openStream());
         Files.copy(bufferedInputStream, Paths.get(to), StandardCopyOption.REPLACE_EXISTING);
+        bufferedInputStream.close();
         return true;
     }
 }
