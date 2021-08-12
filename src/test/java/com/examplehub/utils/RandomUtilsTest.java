@@ -38,4 +38,9 @@ class RandomUtilsTest {
     }
     assertTrue(true);
   }
+
+  @Test
+  void testRandomLetters() {
+    assert RandomUtils.randomLetters(8).length() == 8;
+  }
 }
