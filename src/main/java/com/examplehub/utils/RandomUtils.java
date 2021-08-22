@@ -43,4 +43,22 @@ public class RandomUtils {
     }
     return floats;
   }
+
+  /**
+   * Generate random letters.
+   * @param count the count of random letters.
+   * @return {@code count} random letters.
+   */
+  public static String randomLetters(int count) {
+    int min = 0;
+    int max = 127;
+    int[] chars = randomInts(min, max, count);
+
+    StringBuilder buffer = new StringBuilder();
+    for (int aChar : chars) {
+      buffer.append((char) aChar);
+    }
+    return buffer.toString();
+  }
+
 }
