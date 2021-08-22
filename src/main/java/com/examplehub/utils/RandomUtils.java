@@ -46,6 +46,7 @@ public class RandomUtils {
 
   /**
    * Generate random letters.
+   *
    * @param count the count of random letters.
    * @return {@code count} random letters.
    */
@@ -60,5 +61,4 @@ public class RandomUtils {
     }
     return buffer.toString();
   }
-
 }
