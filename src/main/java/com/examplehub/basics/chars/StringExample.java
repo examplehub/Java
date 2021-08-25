@@ -1,4 +1,3 @@
 package com.examplehub.basics.chars;
 
-public class StringExample {
-}
+public class StringExample {}
