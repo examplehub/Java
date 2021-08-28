@@ -2,4 +2,4 @@ extraction:
   java:
     index:
       # Specify the Java version required to build the project
-      java_version: 12
+      java_version: 16
