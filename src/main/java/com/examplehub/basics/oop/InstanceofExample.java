@@ -1,4 +1,3 @@
 package com.examplehub.basics.oop;
 
-public class InstanceofExample {
-}
+public class InstanceofExample {}

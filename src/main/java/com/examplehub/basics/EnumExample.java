@@ -1,7 +1,13 @@
 package com.examplehub.basics;
 
-public class EnumExample {
-}
+public class EnumExample {}
+
 enum WeekDay {
-    SUN, MON, TUE, WED, THU, FRI, SAT
+  SUN,
+  MON,
+  TUE,
+  WED,
+  THU,
+  FRI,
+  SAT
 }

@@ -1,5 +1,3 @@
 package com.examplehub.basics.reflection;
 
-public class CreateObjFromClass {
-
-}
+public class CreateObjFromClass {}

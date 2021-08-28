@@ -1,4 +1,3 @@
 package com.examplehub.basics;
 
-public class RecordExample {
-}
+public class RecordExample {}
