@@ -2,6 +2,7 @@ package com.examplehub.strings;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.examplehub.basics.chars.StringJoinerExample;
 import org.junit.jupiter.api.Test;
 
 class StringJoinerExampleTest {
