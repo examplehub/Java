@@ -1,6 +1,5 @@
 package com.examplehub.basics.thread;
 
-
 class DaemonThreadTest {
   //  @Test
   void test() {
