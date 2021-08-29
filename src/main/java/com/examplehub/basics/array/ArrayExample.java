@@ -1,5 +1,3 @@
 package com.examplehub.basics.array;
 
-public class ArrayExample {
-
-}
+public class ArrayExample {}

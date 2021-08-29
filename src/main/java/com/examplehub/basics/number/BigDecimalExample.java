@@ -1,4 +1,3 @@
 package com.examplehub.basics.number;
 
-public class BigDecimalExample {
-}
+public class BigDecimalExample {}
