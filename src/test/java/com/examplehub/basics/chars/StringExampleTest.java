@@ -2,10 +2,8 @@ package com.examplehub.basics.chars;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.annotation.Testable;
-
 import java.util.Arrays;
+import org.junit.jupiter.api.Test;
 
 public class StringExampleTest {
   @Test
@@ -32,7 +30,7 @@ public class StringExampleTest {
 
     String s3 = "world";
     String s4 = "WORLD".toLowerCase();
-    assertTrue(s3  != s4);
+    assertTrue(s3 != s4);
     assertTrue(s3.equals(s4));
   }
 
@@ -151,6 +149,7 @@ public class StringExampleTest {
     assertEquals("hello ", "  hello ".stripLeading());
     assertEquals(" hello", " hello ".stripTrailing());
   }
+
   @Test
   void testIsEmpty() {
     assertTrue("".isEmpty());
@@ -210,5 +209,4 @@ public class StringExampleTest {
     assertEquals(123, Integer.parseInt("123"));
     assertEquals(255, Integer.parseInt("ff", 16));
   }
-
 }

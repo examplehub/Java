@@ -1,4 +1,3 @@
 package com.examplehub.basics.utils;
 
-public class MathUtilsExample {
-}
+public class MathUtilsExample {}

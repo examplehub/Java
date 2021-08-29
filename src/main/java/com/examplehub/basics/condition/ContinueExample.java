@@ -1,4 +1,3 @@
 package com.examplehub.basics.condition;
 
-public class ContinueExample {
-}
+public class ContinueExample {}

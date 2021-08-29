@@ -1,5 +1,3 @@
 package com.examplehub.basics.exception;
 
-public class AssertionExample {
-
-}
+public class AssertionExample {}
