@@ -24,4 +24,6 @@ class GenericClassTest {
         assertEquals(123, bean1.getValue());
     }
 
+
+
 }

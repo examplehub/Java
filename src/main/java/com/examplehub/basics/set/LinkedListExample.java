@@ -1,4 +1,4 @@
-package com.examplehub.basics;
+package com.examplehub.basics.set;
 
 import java.util.LinkedList;
 
