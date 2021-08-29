@@ -4,8 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+
 class RecordExampleTest {
-  @Test
+
   void test() {
     record Point(int x, int y) {}
     Point point = new Point(100, 200);
@@ -15,7 +16,7 @@ class RecordExampleTest {
     assertEquals("Point[x=100, y=200]", point.toString());
   }
 
-  @Test
+
   void testConstructor() {
     record Point(int x, int y) {
       public Point {
@@ -33,7 +34,7 @@ class RecordExampleTest {
     }
   }
 
-  @Test
+
   void testStaticMethod() {
     record Point(int x, int y) {
       public static Point of() {
