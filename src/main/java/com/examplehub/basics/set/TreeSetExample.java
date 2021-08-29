@@ -1,4 +1,3 @@
 package com.examplehub.basics.set;
 
-public class TreeSetExample {
-}
+public class TreeSetExample {}
