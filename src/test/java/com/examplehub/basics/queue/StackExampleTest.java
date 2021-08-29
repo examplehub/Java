@@ -4,9 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StackExampleTest {
     @Test
