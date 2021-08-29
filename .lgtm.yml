@@ -2,4 +2,7 @@ extraction:
   java:
     index:
       # Specify the Java version required to build the project
-      java_version: 16
+      java_version: 14
+path_classifiers:
+  test
+    - exclude: /opt/src/src/test/java/com/examplehub/basics/RecordExampleTest.java

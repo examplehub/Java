@@ -6,6 +6,30 @@ import javax.swing.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+enum Color {
+    RED(0, "red color"),
+    BLACK(1, "black color"),
+    WHITE(2, "white color");
+
+    private final int colorValue;
+    private final String colorDesc;
+
+    Color(int colorValue, String colorDes) {
+        this.colorValue = colorValue;
+        this.colorDesc = colorDes;
+    }
+
+    @Override
+    public String toString() {
+        return this.colorDesc;
+    }
+}
+
+enum WeekDay {
+    SUN, MON, TUE, WED, THU, FRI, SAT
+}
+
+
 class EnumExampleTest {
     @Test
     void test() {
@@ -17,6 +41,7 @@ class EnumExampleTest {
         WeekDay day1 = WeekDay.FRI;
         assertTrue(day == day1);
     }
+
     @Test
     void testName() {
         WeekDay day = WeekDay.FRI;
@@ -32,24 +57,7 @@ class EnumExampleTest {
 
     @Test
     void testInit() {
-        enum Color {
-            RED(0, "red color"),
-            BLACK(1, "black color"),
-            WHITE(2, "white color");
 
-            private final int colorValue;
-            private final String colorDesc;
-
-            Color(int colorValue, String colorDes) {
-                this.colorValue = colorValue;
-                this.colorDesc = colorDes;
-            }
-
-            @Override
-            public String toString() {
-                return this.colorDesc;
-            }
-        }
         assertEquals(0, Color.RED.ordinal());
         assertEquals(1, Color.BLACK.ordinal());
         assertEquals(2, Color.WHITE.ordinal());
@@ -58,9 +66,7 @@ class EnumExampleTest {
 
     @Test
     void testSwitch() {
-        enum WeekDay {
-            SUN, MON, TUE, WED, THU, FRI, SAT
-        }
+
         WeekDay day = WeekDay.FRI;
         int result = -1;
         switch (day) {

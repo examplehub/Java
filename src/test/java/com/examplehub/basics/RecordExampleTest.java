@@ -2,8 +2,6 @@ package com.examplehub.basics;
 
 import org.junit.jupiter.api.Test;
 
-import java.awt.geom.Ellipse2D;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class RecordExampleTest {
@@ -24,7 +22,7 @@ class RecordExampleTest {
                     throw new IllegalArgumentException();
                 }
             }
-        }
+        };
         try {
             Point point = new Point(-1, -1);
             fail();
