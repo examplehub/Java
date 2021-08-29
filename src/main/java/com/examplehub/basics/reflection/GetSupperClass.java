@@ -1,4 +1,3 @@
 package com.examplehub.basics.reflection;
 
-public class GetSupperClass {
-}
+public class GetSupperClass {}
