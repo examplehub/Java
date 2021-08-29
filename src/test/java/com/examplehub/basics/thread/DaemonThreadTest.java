@@ -1,9 +1,7 @@
 package com.examplehub.basics.thread;
 
-import org.junit.jupiter.api.Test;
-
 class DaemonThreadTest {
-  @Test
+  //  @Test
   void test() {
     Thread thread = new Thread(new DaemonThread());
     thread.setDaemon(true);
