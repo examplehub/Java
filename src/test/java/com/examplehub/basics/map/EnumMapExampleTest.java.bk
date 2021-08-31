@@ -7,14 +7,14 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+enum Color {
+    WHITE,
+    BLACK,
+    RED
+}
 class EnumMapExampleTest {
     @Test
     void testEnumMap() {
-        enum Color {
-            WHITE,
-            BLACK,
-            RED
-        }
         Map<Color, String> map = new EnumMap<>(Color.class);
         map.put(Color.BLACK, "black color");
         map.put(Color.WHITE, "white color");
