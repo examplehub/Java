@@ -1,24 +1,105 @@
 package com.examplehub.basics.io;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
-import org.junit.jupiter.api.Test;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class FileExampleTest {
-  @Test
-  void testPath() throws IOException {
-    File file = new File("../example.txt");
-    assertEquals("../example.txt", file.getPath());
-    // assertEquals("/Users/cswiki/Workspace/Github/examplehub/Java/../example.txt",
-    // file.getAbsolutePath());
-    // assertEquals("/Users/cswiki/Workspace/Github/examplehub/example.txt",
-    // file.getCanonicalPath());
-  }
+    @Test
+    void testPath() throws IOException {
+        File file = new File("../example.txt");
+        assertEquals("../example.txt", file.getPath());
+        // assertEquals("/Users/cswiki/Workspace/Github/examplehub/Java/../example.txt",
+        // file.getAbsolutePath());
+        // assertEquals("/Users/cswiki/Workspace/Github/examplehub/example.txt",
+        // file.getCanonicalPath());
+    }
 
-  @Test
-  void testSeparator() {
-    assertEquals("/", File.separator);
-  }
+    @Test
+    void testSeparator() {
+        assertEquals("/", File.separator);
+    }
+
+    @Test
+    void testIsFile() {
+        File file = new File("pom.xml");
+        assertTrue(file.isFile());
+    }
+
+    @Test
+    void testIsDirectory() {
+        File file = new File("src");
+        assertTrue(file.isDirectory());
+    }
+
+    @Test
+    void testCreateDelete() throws IOException {
+        File file = new File("example.txt");
+        assertTrue(file.createNewFile());
+        assertTrue(file.delete());
+    }
+
+    @Test
+    void testCreateTempFile() throws IOException {
+        File tempFile = File.createTempFile("temp-", ".txt");
+        tempFile.deleteOnExit();
+        assertTrue(tempFile.isFile());
+        assertFalse(tempFile.isDirectory());
+    }
+
+    //@Test
+    void testListFiles() {
+        File file = new File(".");
+        for (File f : Objects.requireNonNull(file.listFiles())) {
+            System.out.println(f.getName());
+        }
+    }
+
+    @Test
+    void testList() {
+        File file = new File(".");
+        for (String path : Objects.requireNonNull(file.list())) {
+            System.out.println(path);
+        }
+    }
+
+    @Test
+    void testListWithFilter() {
+        File file = new File(".");
+        File[] files = file.listFiles((dir, name) -> name.endsWith(".xml"));
+        assertEquals(1, files.length);
+        assertEquals("pom.xml", files[0].getName());
+    }
+
+    @Test
+    void testMkdir() {
+        File file = new File("temp");
+        assertTrue(file.mkdir());
+        assertTrue(file.delete());
+    }
+
+    @Test
+    void testMkdirs() {
+        File file = new File("temp/sub/1");
+        assertTrue(file.mkdirs());
+        assertTrue(file.delete());
+        assertTrue(new File("temp/sub").delete());
+        assertTrue(new File("temp").delete());
+    }
+
+    @Test
+    void testPaths() {
+        Path path = Paths.get(".", "/", "pom.xml");
+        assertEquals("./pom.xml", path.toString());
+        System.out.println(path.toAbsolutePath());
+        assertEquals("pom.xml", path.normalize().toString());
+        File file = path.toFile();
+        assertEquals("pom.xml", file.getName());
+    }
 }
