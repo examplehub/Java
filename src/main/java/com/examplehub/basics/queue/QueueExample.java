@@ -1,5 +1,3 @@
 package com.examplehub.basics.queue;
 
-public class QueueExample {
-
-}
+public class QueueExample {}
