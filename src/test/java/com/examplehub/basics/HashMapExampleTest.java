@@ -17,6 +17,9 @@ class HashMapExampleTest {
 
     assertNull(hashMap.put("bio", "Github"));
     assertEquals("Github", hashMap.put("bio", "I love coding"));
+
+    hashMap.put("username", "admin_username");
+    assertEquals("admin_username", hashMap.get("username"));
   }
 
   @Test
@@ -61,6 +64,8 @@ class HashMapExampleTest {
     assertNull(hashMap.get("bio"));
 
     assertEquals("jack", hashMap.getOrDefault("user", "jack"));
+
+    assertNull(hashMap.get("url"));
   }
 
   @Test
@@ -112,10 +117,16 @@ class HashMapExampleTest {
     hashMap.put("password", "abc123");
     assertEquals("[password, username]", hashMap.keySet().toString());
 
-    // password->abc123
-    // username->admin
+    String[][] keyValues =
+        new String[][] {
+          {"password", "abc123"},
+          {"username", "admin"}
+        };
+    int index = 0;
     for (String key : hashMap.keySet()) {
-      System.out.println(key + "->" + hashMap.get(key));
+      assertEquals(keyValues[index][0], key);
+      assertEquals(keyValues[index][1], hashMap.get(key));
+      index++;
     }
   }
 
@@ -141,10 +152,50 @@ class HashMapExampleTest {
     HashMap<String, String> hashMap = new HashMap<>();
     hashMap.put("username", "admin");
     hashMap.put("password", "abc123");
-    // password->abc123
-    // username->admin
+    String[][] keyValues =
+        new String[][] {
+          {"password", "abc123"},
+          {"username", "admin"}
+        };
+    int index = 0;
     for (Map.Entry<String, String> entry : hashMap.entrySet()) {
-      System.out.println(entry.getKey() + "->" + entry.getValue());
+      assertEquals(keyValues[index][0], entry.getKey());
+      assertEquals(keyValues[index][1], entry.getValue());
+      index++;
     }
+  }
+
+  @Test
+  void testStoreObj() {
+    class Student {
+      private String name;
+      private int age;
+
+      public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      public String getName() {
+        return name;
+      }
+
+      public void setName(String name) {
+        this.name = name;
+      }
+
+      public int getAge() {
+        return age;
+      }
+
+      public void setAge(int age) {
+        this.age = age;
+      }
+    }
+    Student student = new Student("Jack", 25);
+    HashMap<String, Student> hashMap = new HashMap<>();
+    hashMap.put("jack", student);
+    assertEquals("Jack", hashMap.get("jack").getName());
+    assertEquals(25, hashMap.get("jack").getAge());
   }
 }
