@@ -1,4 +1,3 @@
 package com.examplehub.basics.map;
 
-public class PropertiesExample {
-}
+public class PropertiesExample {}
