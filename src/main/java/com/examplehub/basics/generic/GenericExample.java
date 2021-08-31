@@ -1,4 +1,3 @@
 package com.examplehub.basics.generic;
 
-public class GenericExample {
-}
+public class GenericExample {}

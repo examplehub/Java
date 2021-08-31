@@ -117,10 +117,11 @@ class HashMapExampleTest {
     hashMap.put("password", "abc123");
     assertEquals("[password, username]", hashMap.keySet().toString());
 
-    String[][] keyValues = new String[][]{
-            {"password", "abc123"},
-            {"username", "admin"}
-    };
+    String[][] keyValues =
+        new String[][] {
+          {"password", "abc123"},
+          {"username", "admin"}
+        };
     int index = 0;
     for (String key : hashMap.keySet()) {
       assertEquals(keyValues[index][0], key);
@@ -151,10 +152,11 @@ class HashMapExampleTest {
     HashMap<String, String> hashMap = new HashMap<>();
     hashMap.put("username", "admin");
     hashMap.put("password", "abc123");
-    String[][] keyValues = new String[][]{
-            {"password", "abc123"},
-            {"username", "admin"}
-    };
+    String[][] keyValues =
+        new String[][] {
+          {"password", "abc123"},
+          {"username", "admin"}
+        };
     int index = 0;
     for (Map.Entry<String, String> entry : hashMap.entrySet()) {
       assertEquals(keyValues[index][0], entry.getKey());
