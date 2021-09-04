@@ -1,5 +1,3 @@
 package com.examplehub.basics.io;
 
-public class FileWriterExample {
-
-}
+public class FileWriterExample {}
