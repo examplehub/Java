@@ -3,13 +3,22 @@ package com.examplehub.basics.utils;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ArgumentsSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class MathUtilsExampleTest {
-  @Test
-  void testAbs() {
-    assertEquals(100, Math.abs(-100));
-    assertEquals(100, Math.abs(100));
-    assertEquals(7.8, Math.abs(-7.8));
+
+  @ParameterizedTest
+  @ValueSource(ints = {0, 1, 10, 99, 1000, 9999999})
+  void testAbs(int num) {
+    assertEquals(num, Math.abs(num));
+  }
+
+  @ParameterizedTest
+  @ValueSource(ints = {-10, -5, -1000})
+  void testNegativeAbs(int num) {
+    assertEquals(-num, Math.abs(num));
   }
 
   @Test
