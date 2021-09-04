@@ -1,6 +1,9 @@
 name: Code Formatter
-
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+    paths:
+      - "**.java"
 
 jobs:
   checkstyle:
