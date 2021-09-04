@@ -1,4 +1,3 @@
 package com.examplehub.basics.io;
 
-public class FilesExample {
-}
+public class FilesExample {}
