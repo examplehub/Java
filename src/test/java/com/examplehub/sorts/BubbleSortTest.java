@@ -1,13 +1,14 @@
 package com.examplehub.sorts;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import com.examplehub.domain.Student;
 import com.examplehub.utils.RandomUtils;
 import com.examplehub.utils.SortUtils;
-import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BubbleSortTest {
 

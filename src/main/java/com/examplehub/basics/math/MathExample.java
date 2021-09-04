@@ -1,4 +1,4 @@
-package com.examplehub.basics;
+package com.examplehub.basics.math;
 
 public class MathExample {
   public static void main(String[] args) {

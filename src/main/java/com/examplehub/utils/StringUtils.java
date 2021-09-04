@@ -16,4 +16,14 @@ public class StringUtils {
     }
     return builder.toString();
   }
+
+  public static String capitalize(String origin) {
+    if (origin == null) {
+      throw new NullPointerException();
+    }
+    if (origin.length() == 0) {
+      return "";
+    }
+    return Character.toUpperCase(origin.charAt(0)) + origin.substring(1).toLowerCase();
+  }
 }

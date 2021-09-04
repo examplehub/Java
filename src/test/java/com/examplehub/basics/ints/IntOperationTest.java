@@ -3,6 +3,7 @@ package com.examplehub.basics.ints;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 class IntOperationTest {
   @Test
@@ -18,6 +19,10 @@ class IntOperationTest {
     assertEquals(5, 10 / 2);
     assertEquals(2, 7 / 3);
     assertEquals(164, 12345 / 75);
+
+    assertThrows(ArithmeticException.class, () -> {
+      int division = 10 / 0;
+    });
   }
 
   @Test

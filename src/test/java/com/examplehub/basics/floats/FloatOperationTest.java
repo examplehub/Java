@@ -9,6 +9,7 @@ class FloatOperationTest {
   void testCompare() {
     assertEquals(0.1, 1.0 / 10);
     assertTrue(0.1 > 1 - 9.0 / 10);
+    assertEquals(0.1, 1 - 9 / 10.0, 0.00000001);
   }
 
   @Test
