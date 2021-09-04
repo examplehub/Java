@@ -1,4 +1,3 @@
 package com.examplehub.basics.time;
 
-public class DateExample {
-}
+public class DateExample {}

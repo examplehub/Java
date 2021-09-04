@@ -1,4 +1,3 @@
 package com.examplehub.basics.time;
 
-public class CalendarExample {
-}
+public class CalendarExample {}

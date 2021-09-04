@@ -1,5 +1,3 @@
 package com.examplehub.basics.time;
 
-public class LocalDateTimeExample {
-
-}
+public class LocalDateTimeExample {}

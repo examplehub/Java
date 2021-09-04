@@ -1,9 +1,8 @@
 package com.examplehub.basics.time;
 
-import org.junit.jupiter.api.Test;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.junit.jupiter.api.Test;
 
 class DateExampleTest {
   @Test

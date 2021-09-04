@@ -1,10 +1,9 @@
 package com.examplehub.basics.time;
 
-import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import org.junit.jupiter.api.Test;
 
 class LocalDateTimeExampleTest {
   @Test

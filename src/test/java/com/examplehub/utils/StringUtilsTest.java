@@ -2,14 +2,12 @@ package com.examplehub.utils;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Disabled;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.List;
 
 class StringUtilsTest {
   @Test
@@ -31,9 +29,10 @@ class StringUtilsTest {
   }
 
   static List<Arguments> testCapitalize() {
-    return List.of(Arguments.arguments("abc", "Abc"), //
-            Arguments.arguments("APPLE", "Apple"), //
-            Arguments.arguments("gooD", "Good"));
+    return List.of(
+        Arguments.arguments("abc", "Abc"), //
+        Arguments.arguments("APPLE", "Apple"), //
+        Arguments.arguments("gooD", "Good"));
   }
 
   @ParameterizedTest

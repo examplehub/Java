@@ -1,12 +1,11 @@
 package com.examplehub.basics.system;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.File;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
-
-import java.io.File;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class FileSeparatorTestTest {
   @Test
@@ -14,6 +13,7 @@ class FileSeparatorTestTest {
   void testOnUnixLike() {
     assertEquals("/", File.separator);
   }
+
   @Test
   @EnabledOnOs(OS.WINDOWS)
   void testOnWindows() {
