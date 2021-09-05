@@ -1,4 +1,3 @@
 package com.examplehub.basics.regex;
 
-public class MatchesExample {
-}
+public class MatchesExample {}

@@ -1,8 +1,8 @@
 package com.examplehub.basics.regex;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class MatchesExampleTest {
   @Test
@@ -109,7 +109,6 @@ class MatchesExampleTest {
     assertFalse("a0".matches(regex));
     assertFalse("a01".matches(regex));
   }
-
 
   @Test
   void testOneOrZeroDigit() {
