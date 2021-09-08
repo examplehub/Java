@@ -200,4 +200,15 @@ class MatchesExampleTest {
     assertTrue("learn Java".matches(regex));
     assertTrue("learn Python".matches(regex));
   }
+
+  @Test
+  void testStar() {
+    String regex = "0*";
+    assertTrue("".matches(regex));
+    assertTrue("0".matches(regex));
+    assertTrue("00".matches(regex));
+    assertTrue("000".matches(regex));
+    assertTrue("0000".matches(regex));
+    assertFalse("01".matches(regex));
+  }
 }
