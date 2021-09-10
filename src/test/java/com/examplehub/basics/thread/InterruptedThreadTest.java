@@ -7,7 +7,7 @@ class InterruptedThreadTest {
   @Test
   @Disabled
   void test() throws InterruptedException {
-    //TODO
+    // TODO
     class MyThread extends Thread {
       @Override
       public void run() {

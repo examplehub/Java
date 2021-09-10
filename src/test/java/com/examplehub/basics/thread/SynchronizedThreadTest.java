@@ -1,8 +1,8 @@
 package com.examplehub.basics.thread;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class Counter {
   public static final Object lock = new Object();
@@ -56,11 +56,13 @@ class SynchronizedThreadTest {
   void testSynchronizedThis() throws InterruptedException {
     class Counter {
       private int count = 0;
+
       public void dec() {
         synchronized (this) {
           count = count - 1;
         }
       }
+
       public void add() {
         synchronized (this) {
           count = count + 1;
@@ -72,16 +74,20 @@ class SynchronizedThreadTest {
       }
     }
     Counter counter = new Counter();
-    var firstThread = new Thread(() -> {
-      for (int i = 0; i < 100; i++) {
-        counter.add();
-      }
-    });
-    var secondThread = new Thread(() -> {
-      for (int i = 0; i < 100; i++) {
-        counter.dec();
-      }
-    });
+    var firstThread =
+        new Thread(
+            () -> {
+              for (int i = 0; i < 100; i++) {
+                counter.add();
+              }
+            });
+    var secondThread =
+        new Thread(
+            () -> {
+              for (int i = 0; i < 100; i++) {
+                counter.dec();
+              }
+            });
     firstThread.start();
     secondThread.start();
     firstThread.join();
@@ -93,11 +99,13 @@ class SynchronizedThreadTest {
   void testSynchronizedFunction() throws InterruptedException {
     class Counter {
       private int count = 0;
+
       public synchronized void dec() {
-          count = count - 1;
+        count = count - 1;
       }
+
       public synchronized void add() {
-          count = count + 1;
+        count = count + 1;
       }
 
       public int getCount() {
@@ -105,16 +113,20 @@ class SynchronizedThreadTest {
       }
     }
     Counter counter = new Counter();
-    var firstThread = new Thread(() -> {
-      for (int i = 0; i < 100; i++) {
-        counter.add();
-      }
-    });
-    var secondThread = new Thread(() -> {
-      for (int i = 0; i < 100; i++) {
-        counter.dec();
-      }
-    });
+    var firstThread =
+        new Thread(
+            () -> {
+              for (int i = 0; i < 100; i++) {
+                counter.add();
+              }
+            });
+    var secondThread =
+        new Thread(
+            () -> {
+              for (int i = 0; i < 100; i++) {
+                counter.dec();
+              }
+            });
     firstThread.start();
     secondThread.start();
     firstThread.join();

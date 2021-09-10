@@ -1,10 +1,9 @@
 package com.examplehub.basics.thread;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.jupiter.api.Test;
 
 class JoinThreadTest {
   @Test
@@ -22,14 +21,16 @@ class JoinThreadTest {
   @Test
   void testJoinWithTime() throws InterruptedException {
     AtomicInteger number = new AtomicInteger();
-    Thread thread = new Thread(()->{
-      try {
-        Thread.sleep(100);
-        number.set(1);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    });
+    Thread thread =
+        new Thread(
+            () -> {
+              try {
+                Thread.sleep(100);
+                number.set(1);
+              } catch (InterruptedException e) {
+                e.printStackTrace();
+              }
+            });
     thread.start();
     thread.join(50);
     assertEquals(0, number.get());

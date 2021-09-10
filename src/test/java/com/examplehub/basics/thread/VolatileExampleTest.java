@@ -1,11 +1,12 @@
 package com.examplehub.basics.thread;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class VolatileExampleTest {
   int number = 0;
+
   @Test
   void test() throws InterruptedException {
     class MyThread extends Thread {
