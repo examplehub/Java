@@ -1,4 +1,3 @@
 package com.examplehub.basics.encrypt;
 
-public class URLEncoderExample {
-}
+public class URLEncoderExample {}

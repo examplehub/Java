@@ -1,11 +1,10 @@
 package com.examplehub.basics.regex;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class PatternExampleTest {
   @Test

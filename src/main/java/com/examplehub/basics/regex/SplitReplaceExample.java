@@ -1,4 +1,3 @@
 package com.examplehub.basics.regex;
 
-public class SplitReplaceExample {
-}
+public class SplitReplaceExample {}

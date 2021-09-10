@@ -1,10 +1,9 @@
 package com.examplehub.basics.regex;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class SplitReplaceExampleTest {
   @Test

@@ -1,13 +1,12 @@
 package com.examplehub.basics.encrypt;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 class MD5ExampleTest {
   @Test
@@ -25,7 +24,8 @@ class MD5ExampleTest {
     messageDigest.update("Hello".getBytes(StandardCharsets.UTF_8));
     messageDigest.update("Word".getBytes(StandardCharsets.UTF_8));
     byte[] result = messageDigest.digest();
-    assertEquals("bb91fbbc79de916e68ea0b4dcb7407bad1941aaf", new BigInteger(1, result).toString(16));
+    assertEquals(
+        "bb91fbbc79de916e68ea0b4dcb7407bad1941aaf", new BigInteger(1, result).toString(16));
   }
 
   @Test
@@ -34,6 +34,8 @@ class MD5ExampleTest {
     messageDigest.update("Hello".getBytes(StandardCharsets.UTF_8));
     messageDigest.update("Word".getBytes(StandardCharsets.UTF_8));
     byte[] result = messageDigest.digest();
-    assertEquals("294a5c8e68aa0f68fa7f5309f65baf111b9b2e71b286319ca2c88ed40bb5020c", new BigInteger(1, result).toString(16));
+    assertEquals(
+        "294a5c8e68aa0f68fa7f5309f65baf111b9b2e71b286319ca2c88ed40bb5020c",
+        new BigInteger(1, result).toString(16));
   }
 }
