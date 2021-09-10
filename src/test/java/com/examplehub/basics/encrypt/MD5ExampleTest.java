@@ -21,7 +21,7 @@ class MD5ExampleTest {
 
   @Test
   void testSHA1() throws NoSuchAlgorithmException {
-    MessageDigest messageDigest = MessageDigest.getInstance("SHA1");
+    MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
     messageDigest.update("Hello".getBytes(StandardCharsets.UTF_8));
     messageDigest.update("Word".getBytes(StandardCharsets.UTF_8));
     byte[] result = messageDigest.digest();
@@ -30,7 +30,7 @@ class MD5ExampleTest {
 
   @Test
   void testSHA256() throws NoSuchAlgorithmException {
-    MessageDigest messageDigest = MessageDigest.getInstance("SHA256");
+    MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
     messageDigest.update("Hello".getBytes(StandardCharsets.UTF_8));
     messageDigest.update("Word".getBytes(StandardCharsets.UTF_8));
     byte[] result = messageDigest.digest();
