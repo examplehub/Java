@@ -1,12 +1,13 @@
 package com.examplehub.basics.thread;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class InterruptedThreadTest {
   @Test
+  @Disabled
   void test() throws InterruptedException {
+    //TODO
     class MyThread extends Thread {
       @Override
       public void run() {

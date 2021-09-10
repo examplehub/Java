@@ -1,7 +1,5 @@
 package com.examplehub.basics.thread;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 class YieldThreadTest {
