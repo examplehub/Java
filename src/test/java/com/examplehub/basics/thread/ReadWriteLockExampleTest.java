@@ -1,13 +1,12 @@
 package com.examplehub.basics.thread;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class ReadWriteLockExampleTest {
   static class Counter {
@@ -21,7 +20,7 @@ class ReadWriteLockExampleTest {
       wLock.lock();
       try {
         counts[index] += 1;
-      }finally {
+      } finally {
         wLock.unlock();
       }
     }
@@ -30,20 +29,23 @@ class ReadWriteLockExampleTest {
       rLock.lock();
       try {
         return Arrays.copyOf(counts, counts.length);
-      }finally {
+      } finally {
         rLock.unlock();
       }
     }
   }
+
   @Test
   void test() throws InterruptedException {
     Counter counter = new Counter();
     for (int i = 0; i < 10; i++) {
       int finalI = i;
-      new Thread(()->{
-        counter.inc(finalI);
-        System.out.println(Arrays.toString(counter.get()));
-      }).start();
+      new Thread(
+              () -> {
+                counter.inc(finalI);
+                System.out.println(Arrays.toString(counter.get()));
+              })
+          .start();
     }
     Thread.sleep(100);
     assertEquals("[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]", Arrays.toString(counter.get()));
