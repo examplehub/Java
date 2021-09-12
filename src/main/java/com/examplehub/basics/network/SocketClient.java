@@ -16,16 +16,18 @@ public class SocketClient {
     clientSocket.close();
     System.out.println("disconnected.");
   }
-  private static void handle(InputStream inputStream, OutputStream outputStream) throws IOException {
+
+  private static void handle(InputStream inputStream, OutputStream outputStream)
+      throws IOException {
     var writer = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
     var reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
     Scanner scanner = new Scanner(System.in);
     System.out.println("[server] " + reader.readLine());
-    for (;;) {
+    for (; ; ) {
       System.out.print(">>> "); // 打印提示
       String s = scanner.nextLine(); // 读取一行输入
       writer.write(s + System.lineSeparator());
-//      writer.newLine();
+      //      writer.newLine();
       writer.flush();
       String resp = reader.readLine();
       System.out.println("<<< " + resp);

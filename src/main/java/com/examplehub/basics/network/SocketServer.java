@@ -12,9 +12,10 @@ public class SocketServer {
     public ServerHandler(Socket socket) {
       this.socket = socket;
     }
+
     public void run() {
       try (InputStream inputStream = this.socket.getInputStream()) {
-        try(OutputStream outputStream = this.socket.getOutputStream()) {
+        try (OutputStream outputStream = this.socket.getOutputStream()) {
           handle(inputStream, outputStream);
         }
       } catch (Exception e) {
@@ -52,6 +53,6 @@ public class SocketServer {
       System.out.println("connected from " + socket.getRemoteSocketAddress());
       new Thread(new ServerHandler(socket)).start();
     }
-    //TODO
+    // TODO
   }
 }
