@@ -9,13 +9,14 @@ public class HttpServerExample {
   public static void main(String[] args) throws IOException {
     ServerSocket ss = new ServerSocket(8080);
     System.out.println("server is running...");
-    for (;;) {
+    for (; ; ) {
       Socket sock = ss.accept();
       System.out.println("connected from " + sock.getRemoteSocketAddress());
       new Handler(sock).start();
     }
   }
 }
+
 class Handler extends Thread {
   Socket sock;
 
@@ -47,7 +48,7 @@ class Handler extends Thread {
     if (first.startsWith("GET / HTTP/1.")) {
       requestOk = true;
     }
-    for (;;) {
+    for (; ; ) {
       String header = reader.readLine();
       if (header.isEmpty()) { // 读取到空行时, HTTP Header读取完毕
         break;
