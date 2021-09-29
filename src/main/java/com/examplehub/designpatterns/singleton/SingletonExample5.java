@@ -3,8 +3,7 @@ package com.examplehub.designpatterns.singleton;
 public class SingletonExample5 {
   private static SingletonExample5 INSTANCE;
 
-  private SingletonExample5(){
-  }
+  private SingletonExample5() {}
 
   public static SingletonExample5 getInstance() {
     if (INSTANCE == null) {

@@ -1,8 +1,8 @@
 package com.examplehub.basics.constant;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class FinalExampleTest {
   @Test
@@ -10,13 +10,13 @@ class FinalExampleTest {
     final double PI = 3.1415927;
     assertEquals(3.1415927, PI);
 
-    //PI = 3.14; // cannot assign a value to final variable PI
+    // PI = 3.14; // cannot assign a value to final variable PI
   }
 
   @Test
   void testWithoutInit() {
     final double PI;
-    //System.out.println(PI); // variable PI might not have been initialized
+    // System.out.println(PI); // variable PI might not have been initialized
   }
 
   @Test
@@ -28,7 +28,7 @@ class FinalExampleTest {
 
   @Test
   void testStatic() {
-     class MyMath {
+    class MyMath {
       public static final double PI = 3.1415927;
     }
     assertEquals(3.1415927, MyMath.PI);

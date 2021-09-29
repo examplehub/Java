@@ -1,8 +1,8 @@
 package com.examplehub.basics.function;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class ModifyFunctionArgsTest {
   @Test

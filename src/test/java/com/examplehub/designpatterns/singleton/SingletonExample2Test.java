@@ -1,8 +1,8 @@
 package com.examplehub.designpatterns.singleton;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class SingletonExample2Test {
   @Test

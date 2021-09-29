@@ -1,7 +1,7 @@
 package com.examplehub.basics.function;
 
 public class ModifyFunctionArgs {
-  static class MyObj{
+  static class MyObj {
     public int age = -1;
   }
 

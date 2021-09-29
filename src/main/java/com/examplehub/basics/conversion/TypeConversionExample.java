@@ -1,4 +1,3 @@
 package com.examplehub.basics.conversion;
 
-public class TypeConversionExample {
-}
+public class TypeConversionExample {}

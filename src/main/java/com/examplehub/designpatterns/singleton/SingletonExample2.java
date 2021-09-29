@@ -9,8 +9,9 @@ public class SingletonExample2 {
      */
     INSTANCE = new SingletonExample2();
   }
-  private SingletonExample2(){
-  }
+
+  private SingletonExample2() {}
+
   public static SingletonExample2 getInstance() {
     return INSTANCE;
   }

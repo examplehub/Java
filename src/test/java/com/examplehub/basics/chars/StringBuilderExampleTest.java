@@ -18,7 +18,10 @@ class StringBuilderExampleTest {
     String secondStr = "987654321";
     String thirdStr = "abcef";
 
-    StringBuilder builder = new StringBuilder(firstStr.length() + secondStr.length() + thirdStr.length());
-    assertEquals("123456789987654321abcef", builder.append(firstStr).append(secondStr).append(thirdStr).toString());
+    StringBuilder builder =
+        new StringBuilder(firstStr.length() + secondStr.length() + thirdStr.length());
+    assertEquals(
+        "123456789987654321abcef",
+        builder.append(firstStr).append(secondStr).append(thirdStr).toString());
   }
 }

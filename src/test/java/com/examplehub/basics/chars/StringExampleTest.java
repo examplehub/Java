@@ -29,6 +29,7 @@ public class StringExampleTest {
     assertEquals("3Hi4", 3 + "Hi" + 4);
     assertEquals("Hi10", "Hi" + 0xA);
   }
+
   @Test
   void testEqual() {
     String s1 = "hello";
