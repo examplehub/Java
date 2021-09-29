@@ -11,4 +11,14 @@ class StringBuilderExampleTest {
     builder.append("Hello").append(",").append("World").append("!");
     assertEquals("Hello,World!", builder.toString());
   }
+
+  @Test
+  void testInitCapacity() {
+    String firstStr = "123456789";
+    String secondStr = "987654321";
+    String thirdStr = "abcef";
+
+    StringBuilder builder = new StringBuilder(firstStr.length() + secondStr.length() + thirdStr.length());
+    assertEquals("123456789987654321abcef", builder.append(firstStr).append(secondStr).append(thirdStr).toString());
+  }
 }

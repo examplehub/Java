@@ -22,6 +22,14 @@ public class StringExampleTest {
   }
 
   @Test
+  void testPlusOperator() {
+    assertEquals("Hi, Java", "Hi, " + "Java");
+    assertEquals("Hi 3", "Hi " + 3);
+    assertEquals("Hi 3.14", "Hi " + 3.14);
+    assertEquals("3Hi4", 3 + "Hi" + 4);
+    assertEquals("Hi10", "Hi" + 0xA);
+  }
+  @Test
   void testEqual() {
     String s1 = "hello";
     String s2 = "hello";
@@ -88,11 +96,9 @@ public class StringExampleTest {
   void testConcat() {
     String s1 = "hello";
     String s2 = " world!";
-    assertEquals("hello world!", s1 + s2);
     assertEquals("hello world!", s1.concat(s2));
-
     int age = 25;
-    assertEquals("I'm 25.", "I'm ".concat(25 + "."));
+    assertEquals("I'm 25.", "I'm ".concat(age + "."));
   }
 
   //    @Test
