@@ -2,9 +2,7 @@ package com.examplehub.sorts;
 
 import com.examplehub.utils.SortUtils;
 
-/**
- * https://en.wikipedia.org/wiki/Quicksort#Lomuto_partition_scheme
- */
+/** https://en.wikipedia.org/wiki/Quicksort#Lomuto_partition_scheme */
 public class QuickSortLomutoPartition implements Sort {
 
   @Override

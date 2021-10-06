@@ -1,14 +1,13 @@
 package com.examplehub.sorts;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.examplehub.domain.Student;
 import com.examplehub.utils.RandomUtils;
 import com.examplehub.utils.SortUtils;
+import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class BubbleSortV2Test {
 
@@ -29,7 +28,7 @@ class BubbleSortV2Test {
   @Test
   void testSortIntegers() {
     Integer[] integers =
-            Arrays.stream(RandomUtils.randomInts(-50, 50, 100)).boxed().toArray(Integer[]::new);
+        Arrays.stream(RandomUtils.randomInts(-50, 50, 100)).boxed().toArray(Integer[]::new);
     sort.sort(integers);
     assertTrue(SortUtils.isSorted(integers));
   }
