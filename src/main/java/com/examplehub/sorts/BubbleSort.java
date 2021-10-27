@@ -10,9 +10,9 @@ public class BubbleSort implements Sort {
    * @param numbers the numbers to be sorted.
    */
   public void sort(int[] numbers) {
-    for (int i = 0; i < numbers.length - 1; ++i) {
+    for (int i = 1; i < numbers.length; ++i) {
       boolean swapped = false;
-      for (int j = 0; j < numbers.length - 1 - i; ++j) {
+      for (int j = 0; j < numbers.length - i; ++j) {
         if (numbers[j] > numbers[j + 1]) {
           SortUtils.swap(numbers, j, j + 1);
           swapped = true;
@@ -31,9 +31,9 @@ public class BubbleSort implements Sort {
    * @param <T> the class of the objects in the array.
    */
   public <T extends Comparable<T>> void sort(T[] array) {
-    for (int i = 0; i < array.length - 1; ++i) {
+    for (int i = 1; i < array.length; ++i) {
       boolean swapped = false;
-      for (int j = 0; j < array.length - 1 - i; ++j) {
+      for (int j = 0; j < array.length - i; ++j) {
         if (array[j].compareTo(array[j + 1]) > 0) {
           SortUtils.swap(array, j, j + 1);
           swapped = true;
