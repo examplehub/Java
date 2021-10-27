@@ -1,17 +1,14 @@
 package com.examplehub.leetcode.easy;
 
 import com.examplehub.leetcode.TreeNode;
-import com.sun.source.tree.Tree;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * https://leetcode.com/problems/path-sum-ii/
- */
+/** https://leetcode.com/problems/path-sum-ii/ */
 public class PathSumII {
   private static List<List<Integer>> result = new ArrayList<>();
   private static List<Integer> path = new ArrayList<>();
+
   public static List<List<Integer>> doSolution1(TreeNode root, int targetNum) {
     deepFirstSearch(root, targetNum);
     return result;

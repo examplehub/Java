@@ -6,7 +6,7 @@ public class LinearSearchOptimization implements Search {
    * Linear search algorithm.
    *
    * @param numbers the numbers to be searched.
-   * @param key     the key value t o be searched.
+   * @param key the key value t o be searched.
    * @return index of {@code key} value if found, otherwise -1.
    */
   @Override
@@ -29,8 +29,8 @@ public class LinearSearchOptimization implements Search {
    * Generic linear search algorithm.
    *
    * @param array the array to be searched.
-   * @param key   the key object to be searched.
-   * @param <T>   the class of the objects in the array.
+   * @param key the key object to be searched.
+   * @param <T> the class of the objects in the array.
    * @return index of {@code key} if found, otherwise -1.
    */
   @Override
