@@ -1,7 +1,5 @@
 package com.examplehub.sorts;
 
-import com.examplehub.utils.SortUtils;
-
 public class QuickSort implements Sort {
 
   @Override
@@ -11,18 +9,15 @@ public class QuickSort implements Sort {
 
   private int partition(int[] number, int left, int right) {
     int pivot = number[left];
-    while (left < right) {
-      while (left < right && number[right] >= pivot) {
+    while (left != right) {
+      while (left != right && number[right] >= pivot) {
         right--;
       }
-      while (left < right && number[left] <= pivot) {
+      number[left] = number[right];
+      while (left != right && number[left] <= pivot) {
         left++;
       }
-      if (left < right) {
-        SortUtils.swap(number, left, right);
-        left++;
-        right--;
-      }
+      number[right] = number[left];
     }
     number[left] = pivot;
     return left;
@@ -54,18 +49,15 @@ public class QuickSort implements Sort {
 
   private static <T extends Comparable<T>> int partition(T[] array, int left, int right) {
     T pivot = array[left];
-    while (left < right) {
-      while (left < right && array[right].compareTo(pivot) >= 0) {
+    while (left != right) {
+      while (left != right && array[right].compareTo(pivot) >= 0) {
         right--;
       }
-      while (left < right && array[left].compareTo(pivot) <= 0) {
+      array[left] = array[right];
+      while (left != right && array[left].compareTo(pivot) <= 0) {
         left++;
       }
-      if (left < right) {
-        SortUtils.swap(array, left, right);
-        left++;
-        right--;
-      }
+      array[right] = array[left];
     }
     array[left] = pivot;
     return left;
