@@ -1,9 +1,0 @@
-language: java
-script:
-  - gradle clean test
-  - mvn clean test
-  
-notifications:
-    webhooks: https://www.travisbuddy.com/
-    on_success: never
-    on_failure: always
