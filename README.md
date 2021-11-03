@@ -1,5 +1,7 @@
 # Java Programming Examples
 
+[![Build](https://github.com/examplehub/Java/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/examplehub/Java/actions/workflows/maven.yml)
+[![Build](https://github.com/examplehub/Java/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/examplehub/Java/actions/workflows/gradle.yml)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/examplehub/Java)
 [![LGTM](https://img.shields.io/lgtm/alerts/github/examplehub/Java.svg?label=LGTM&logo=LGTM&style=flat-square)](https://lgtm.com/projects/g/examplehub/Java/alerts)&nbsp;
 [![contributions welcome](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3&style=flat-square)](https://github.com/examplehub/Java/blob/master/CONTRIBUTING.md)&nbsp;
