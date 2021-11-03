@@ -49,7 +49,12 @@ public class HeapSort implements Sort{
 
   @Override
   public <T extends Comparable<T>> void sort(T[] array) {
-
+    heapInsert(array);
+    int length = array.length;
+    while (length > 1) {
+      SortUtils.swap(array, 0, --length);
+      heapify(array, 0, length);
+    }
   }
 
   public <T extends Comparable<T>>void heapInsert(T[] numbers) {
