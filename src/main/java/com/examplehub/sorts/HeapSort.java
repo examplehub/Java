@@ -2,7 +2,7 @@ package com.examplehub.sorts;
 
 import com.examplehub.utils.SortUtils;
 
-public class HeapSort implements Sort{
+public class HeapSort implements Sort {
 
   @Override
   public void sort(int[] numbers) {
@@ -57,7 +57,7 @@ public class HeapSort implements Sort{
     }
   }
 
-  public <T extends Comparable<T>>void heapInsert(T[] numbers) {
+  public <T extends Comparable<T>> void heapInsert(T[] numbers) {
     for (int i = 0; i < numbers.length; ++i) {
       int currentIndex = i;
       int parentIndex = (currentIndex - 1) / 2;
