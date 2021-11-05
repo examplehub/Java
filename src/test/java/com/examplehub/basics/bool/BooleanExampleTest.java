@@ -48,4 +48,24 @@ class BooleanExampleTest {
     int abs = num < 0 ? -num : num;
     assertEquals(3, abs);
   }
+
+  @Test
+  void testValueOf() {
+    Boolean b = Boolean.valueOf(true);
+    assertTrue(b.booleanValue());
+
+    b = Boolean.valueOf("false");
+    assertFalse(b.booleanValue());
+  }
+
+  @Test
+  void testAutoBoxing() {
+    Boolean b = false;
+    System.out.println(b);
+    assertFalse(b);
+
+    boolean bValue = b;
+    System.out.println(bValue);
+    assertFalse(bValue);
+  }
 }
