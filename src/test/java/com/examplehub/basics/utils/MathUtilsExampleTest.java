@@ -51,4 +51,11 @@ class MathUtilsExampleTest {
     double randomNumber = Math.random();
     assertTrue(randomNumber >= 0 && randomNumber < 1);
   }
+
+  @Test
+  void testRound() {
+    assertEquals(3, Math.round(3.14));
+    assertEquals(4, Math.round(3.78));
+    assertEquals(-3, Math.round(-3.14));
+  }
 }
