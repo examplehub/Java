@@ -29,7 +29,6 @@ public class ValidSudoku {
         return false;
       }
     }
-
     // travel all sub-box
     // TODO
     return true;
