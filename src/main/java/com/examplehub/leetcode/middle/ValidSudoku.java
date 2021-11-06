@@ -1,12 +1,10 @@
 package com.examplehub.leetcode.middle;
 
-/**
- * https://leetcode.com/problems/valid-sudoku/
- */
+/** https://leetcode.com/problems/valid-sudoku/ */
 public class ValidSudoku {
   public static boolean solution1(char[][] board) {
 
-    //travel all rows to check
+    // travel all rows to check
     for (int i = 0; i < 9; i++) {
       int[] digitTable = new int[10];
       for (int j = 0; j < 9; j++) {
@@ -19,7 +17,7 @@ public class ValidSudoku {
       }
     }
 
-    //travel all columns to check
+    // travel all columns to check
     for (int i = 0; i < 9; i++) {
       int[] digitTable = new int[10];
       for (int j = 0; j < 9; j++) {
@@ -31,9 +29,8 @@ public class ValidSudoku {
         return false;
       }
     }
-
-    //travel all sub-box
-    //TODO
+    // travel all sub-box
+    // TODO
     return true;
   }
 
