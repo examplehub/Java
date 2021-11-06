@@ -14,6 +14,6 @@ class SystemExampleTest {
     }
     assertEquals(5050, sum);
     long endTime = System.currentTimeMillis();
-    assertTrue(endTime > startTime);
+    assertTrue(endTime >= startTime);
   }
 }
