@@ -1,10 +1,11 @@
 package com.examplehub.basics.time;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class LocalDateTimeExampleTest {
   @Test
@@ -16,7 +17,6 @@ class LocalDateTimeExampleTest {
     System.out.println("localTime: " + localTime);
     System.out.println("localDateTime: " + localDateTime);
   }
-
 
   @Test
   void testOf() {

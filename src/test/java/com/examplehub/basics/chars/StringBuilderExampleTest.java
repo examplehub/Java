@@ -11,6 +11,7 @@ class StringBuilderExampleTest {
     StringBuilder builder = new StringBuilder("hello123");
     assertEquals("hello123", builder.toString());
   }
+
   @Test
   void testCapacity() {
     StringBuilder sb = new StringBuilder();
@@ -25,9 +26,9 @@ class StringBuilderExampleTest {
 
   @Test
   void testAppend() {
-      StringBuilder builder = new StringBuilder();
-      builder.append("Hello").append(",").append("World").append("!");
-      assertEquals("Hello,World!", builder.toString());
+    StringBuilder builder = new StringBuilder();
+    builder.append("Hello").append(",").append("World").append("!");
+    assertEquals("Hello,World!", builder.toString());
   }
 
   @Test
@@ -47,7 +48,7 @@ class StringBuilderExampleTest {
     builder.deleteCharAt(0);
     assertEquals("ello123abc", builder.toString());
 
-    //delete ello
+    // delete ello
     for (int i = 1; i <= 4; i++) {
       builder.deleteCharAt(0);
     }

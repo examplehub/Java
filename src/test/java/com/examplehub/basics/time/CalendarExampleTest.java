@@ -1,11 +1,10 @@
 package com.examplehub.basics.time;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class CalendarExampleTest {
 
@@ -13,8 +12,9 @@ class CalendarExampleTest {
   void testInit() {
     Calendar calendar = Calendar.getInstance();
     calendar.set(2099, Calendar.DECEMBER, 31, 23, 59, 59);
-    assertEquals("2099-12-31 23:59:59",
-            new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(calendar.getTime()));
+    assertEquals(
+        "2099-12-31 23:59:59",
+        new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(calendar.getTime()));
   }
 
   @Test
@@ -43,8 +43,9 @@ class CalendarExampleTest {
     calendar.set(Calendar.MINUTE, 33);
     calendar.set(Calendar.SECOND, 59);
 
-    assertEquals("2088-09-25 16:33:59",
-            new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(calendar.getTime()));
+    assertEquals(
+        "2088-09-25 16:33:59",
+        new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(calendar.getTime()));
   }
 
   @Test
@@ -59,7 +60,8 @@ class CalendarExampleTest {
     calendar.set(Calendar.SECOND, 59);
 
     calendar.add(Calendar.YEAR, 12);
-    assertEquals("2100-09-25 16:33:59",
-            new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(calendar.getTime()));
+    assertEquals(
+        "2100-09-25 16:33:59",
+        new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(calendar.getTime()));
   }
 }

@@ -1,4 +1,3 @@
 package com.examplehub.basics.system;
 
-public class SystemExample {
-}
+public class SystemExample {}
