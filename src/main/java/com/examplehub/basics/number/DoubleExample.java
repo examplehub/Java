@@ -1,4 +1,3 @@
 package com.examplehub.basics.number;
 
-public class DoubleExample {
-}
+public class DoubleExample {}

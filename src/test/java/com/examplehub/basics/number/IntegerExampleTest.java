@@ -2,9 +2,7 @@ package com.examplehub.basics.number;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import jdk.jfr.StackTrace;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
 
 class IntegerExampleTest {
 
@@ -29,10 +27,12 @@ class IntegerExampleTest {
     System.out.println(number);
     assertEquals(123, number);
 
-    assertThrows(NumberFormatException.class, () -> {
-      int num = Integer.parseInt("123a");
-      fail();
-    });
+    assertThrows(
+        NumberFormatException.class,
+        () -> {
+          int num = Integer.parseInt("123a");
+          fail();
+        });
   }
 
   @Test
@@ -71,7 +71,7 @@ class IntegerExampleTest {
   }
 
   @Test
-  void test(){
+  void test() {
     assertEquals("a", Integer.toHexString(10));
   }
 }

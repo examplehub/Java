@@ -1,10 +1,9 @@
 package com.examplehub.basics.oop;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Objects;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class ObjectExampleTest {
   @Test
@@ -18,6 +17,7 @@ class ObjectExampleTest {
     class Student {
       private int id;
       private String name;
+
       public Student(int id, String name) {
         this.id = id;
         this.name = name;
