@@ -4,10 +4,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 class LocalDateTimeExampleTest {
   @Test
-  void test() {
+  void testInit() {
     LocalDate localDate = LocalDate.now();
     LocalTime localTime = LocalTime.now();
     LocalDateTime localDateTime = LocalDateTime.now();
@@ -16,25 +17,26 @@ class LocalDateTimeExampleTest {
     System.out.println("localDateTime: " + localDateTime);
   }
 
-  @Test
-  void test2() {
-    LocalDateTime localDateTime = LocalDateTime.now();
-    LocalDate localDate = localDateTime.toLocalDate();
-    LocalTime localTime = localDateTime.toLocalTime();
-    System.out.println("localDate: " + localDate);
-    System.out.println("localTime: " + localTime);
-    System.out.println("localDateTime: " + localDateTime);
-  }
 
   @Test
-  void test3() {
-    LocalDate d2 = LocalDate.of(2019, 11, 30);
-    LocalTime t2 = LocalTime.of(15, 16, 17);
-    LocalDateTime dt2 = LocalDateTime.of(2019, 11, 30, 15, 16, 17);
-    LocalDateTime dt3 = LocalDateTime.of(d2, t2);
-    System.out.println(d2);
-    System.out.println(t2);
-    System.out.println(dt2);
-    System.out.println(dt3);
+  void testOf() {
+    LocalDate localDate = LocalDate.of(2019, 11, 30);
+    LocalTime localTime = LocalTime.of(15, 16, 17);
+    LocalDateTime localDateTime = LocalDateTime.of(2019, 11, 30, 15, 16, 17);
+
+    assertEquals(2019, localDate.getYear());
+    assertEquals(11, localDate.getMonth().getValue());
+    assertEquals(30, localDate.getDayOfMonth());
+
+    assertEquals(15, localTime.getHour());
+    assertEquals(16, localTime.getMinute());
+    assertEquals(17, localTime.getSecond());
+
+    assertEquals(2019, localDateTime.getYear());
+    assertEquals(11, localDateTime.getMonthValue());
+    assertEquals(30, localDateTime.getDayOfMonth());
+    assertEquals(15, localDateTime.getHour());
+    assertEquals(16, localDateTime.getMinute());
+    assertEquals(17, localDateTime.getSecond());
   }
 }
