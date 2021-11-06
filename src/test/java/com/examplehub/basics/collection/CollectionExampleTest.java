@@ -1,13 +1,12 @@
 package com.examplehub.basics.collection;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class CollectionExampleTest {
 
@@ -133,7 +132,6 @@ class CollectionExampleTest {
     }
     assertEquals("[]", collection.toString());
   }
-
 
   @Test
   void testForEach() {
