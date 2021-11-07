@@ -2,10 +2,8 @@ package com.examplehub.basics.set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
-
 import org.junit.jupiter.api.Test;
 
 class TreeSetExampleTest {
@@ -40,10 +38,7 @@ class TreeSetExampleTest {
 
       @Override
       public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+        return "Student{" + "name='" + name + '\'' + ", age=" + age + '}';
       }
 
       @Override
@@ -61,13 +56,14 @@ class TreeSetExampleTest {
     set.add(s2);
     set.add(s3);
 
-    assertEquals("[Student{name='Zara', age=21}, Student{name='Tom', age=22}, Student{name='Jack', age=23}]"
-            , set.toString());
+    assertEquals(
+        "[Student{name='Zara', age=21}, Student{name='Tom', age=22}, Student{name='Jack', age=23}]",
+        set.toString());
   }
 
   @Test
   void testComparator() {
-    class Student{
+    class Student {
       private final String name;
       private final int age;
 
@@ -83,12 +79,10 @@ class TreeSetExampleTest {
       public int getAge() {
         return age;
       }
+
       @Override
       public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+        return "Student{" + "name='" + name + '\'' + ", age=" + age + '}';
       }
     }
 
@@ -101,7 +95,8 @@ class TreeSetExampleTest {
     set.add(s2);
     set.add(s3);
 
-    assertEquals("[Student{name='Zara', age=21}, Student{name='Tom', age=22}, Student{name='Jack', age=23}]"
-            , set.toString());
+    assertEquals(
+        "[Student{name='Zara', age=21}, Student{name='Tom', age=22}, Student{name='Jack', age=23}]",
+        set.toString());
   }
 }

@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.jupiter.api.Test;
 
 class HashMapExampleTest {
@@ -22,8 +21,8 @@ class HashMapExampleTest {
     assertEquals("admin", hashMap.put("username", "admin_username"));
     assertEquals("admin_username", hashMap.get("username"));
 
-    assertEquals("{password=abc123, bio=I love coding, username=admin_username}",
-            hashMap.toString());
+    assertEquals(
+        "{password=abc123, bio=I love coding, username=admin_username}", hashMap.toString());
   }
 
   @Test
@@ -122,10 +121,10 @@ class HashMapExampleTest {
     assertEquals("[password, username]", hashMap.keySet().toString());
 
     String[][] keyValues =
-            new String[][]{
-                    {"password", "abc123"},
-                    {"username", "admin"}
-            };
+        new String[][] {
+          {"password", "abc123"},
+          {"username", "admin"}
+        };
     int index = 0;
     for (String key : hashMap.keySet()) {
       assertEquals(keyValues[index][0], key);
@@ -157,10 +156,10 @@ class HashMapExampleTest {
     hashMap.put("username", "admin");
     hashMap.put("password", "abc123");
     String[][] keyValues =
-            new String[][]{
-                    {"password", "abc123"},
-                    {"username", "admin"}
-            };
+        new String[][] {
+          {"password", "abc123"},
+          {"username", "admin"}
+        };
     int index = 0;
     for (Map.Entry<String, String> entry : hashMap.entrySet()) {
       assertEquals(keyValues[index][0], entry.getKey());

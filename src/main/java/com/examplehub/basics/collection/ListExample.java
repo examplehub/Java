@@ -1,4 +1,3 @@
 package com.examplehub.basics.collection;
 
-public class ListExample {
-}
+public class ListExample {}
