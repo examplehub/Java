@@ -1,4 +1,3 @@
 package com.examplehub.basics.io;
 
-public class PrintStreamExample {
-}
+public class PrintStreamExample {}

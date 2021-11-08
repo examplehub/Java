@@ -21,18 +21,18 @@ class FileWriterExampleTest {
   }
 
   @Test
-  void testWriteSingleChar() throws IOException{
+  void testWriteSingleChar() throws IOException {
     String fileName = "example.txt";
     try (Writer writer = new FileWriter(fileName)) {
       writer.write('A');
-      writer.write(66); //write B
+      writer.write(66); // write B
     }
     assertEquals("AB", FileReaderExample.read(fileName));
     Files.deleteIfExists(Paths.get(fileName));
   }
 
   @Test
-  void testWriteCharArray() throws IOException{
+  void testWriteCharArray() throws IOException {
     char[] letters = {'J', 'a', 'v', 'a'};
     String fileName = "example.txt";
     try (Writer writer = new FileWriter(fileName)) {
@@ -43,7 +43,7 @@ class FileWriterExampleTest {
   }
 
   @Test
-  void testWriteOnesOfCharArray() throws IOException{
+  void testWriteOnesOfCharArray() throws IOException {
     char[] letters = {'J', 'a', 'v', 'a'};
     String fileName = "example.txt";
     try (Writer writer = new FileWriter(fileName)) {

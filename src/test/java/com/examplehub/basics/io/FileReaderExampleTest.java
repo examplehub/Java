@@ -1,14 +1,13 @@
 package com.examplehub.basics.io;
 
-import com.examplehub.utils.StringUtils;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.examplehub.utils.StringUtils;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 class FileReaderExampleTest {
 
@@ -67,14 +66,15 @@ class FileReaderExampleTest {
   void testCopyCharacterFile() throws IOException {
     String filename = "pom.xml";
     String newFile = "pom_bk.xml";
-    try (Writer writer = new FileWriter(newFile); Reader reader = new FileReader(filename)) {
+    try (Writer writer = new FileWriter(newFile);
+        Reader reader = new FileReader(filename)) {
       int ch;
       while ((ch = reader.read()) != -1) {
         writer.write(ch);
       }
       writer.flush();
       assertEquals(new File(filename).length(), new File(newFile).length());
-    }finally {
+    } finally {
       Files.deleteIfExists(Paths.get(newFile));
     }
   }

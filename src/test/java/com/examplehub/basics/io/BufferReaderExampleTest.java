@@ -1,12 +1,11 @@
 package com.examplehub.basics.io;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class BufferReaderExampleTest {
   @Test
@@ -14,7 +13,7 @@ class BufferReaderExampleTest {
     String filename = "pom.xml";
     String newFileName = "pom_bk.xml";
     try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
-         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(newFileName))) {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(newFileName))) {
       String line = bufferedReader.readLine();
       while (line != null) {
         String nextLine = bufferedReader.readLine();
