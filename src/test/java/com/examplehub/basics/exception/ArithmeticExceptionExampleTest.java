@@ -1,8 +1,8 @@
 package com.examplehub.basics.exception;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class ArithmeticExceptionExampleTest {
   @Test

@@ -1,8 +1,8 @@
 package com.examplehub.basics.exception;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class ThrowsExceptionExampleTest {
   @Test
@@ -30,8 +30,8 @@ class ThrowsExceptionExampleTest {
     }
   }
 
-  public int parseInt(String str) throws NumberFormatException{
-    if (!str.matches("\\d+")){
+  public int parseInt(String str) throws NumberFormatException {
+    if (!str.matches("\\d+")) {
       throw new NumberFormatException("can't contains non-digits");
     }
     return Integer.parseInt(str);

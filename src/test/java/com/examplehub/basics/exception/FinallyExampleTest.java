@@ -1,8 +1,8 @@
 package com.examplehub.basics.exception;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class FinallyExampleTest {
   @Test
@@ -20,13 +20,14 @@ class FinallyExampleTest {
   void testReturn() {
     assertEquals(3, func());
   }
+
   public int func() {
     try {
       int num = 10 / 0;
       return 1;
     } catch (ArithmeticException e) {
       return 2;
-    }finally {
+    } finally {
       return 3;
     }
   }

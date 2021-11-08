@@ -1,4 +1,3 @@
 package com.examplehub.basics.exception;
 
-public class ArithmeticExceptionExample {
-}
+public class ArithmeticExceptionExample {}
