@@ -68,7 +68,7 @@ class FileExampleTest {
 
   @Test
   void testCreateDelete() throws IOException {
-    File file = new File("example.txt");
+    File file = new File("demo.txt");
     assertTrue(file.createNewFile());
     assertTrue(file.delete());
   }

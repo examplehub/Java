@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import org.junit.jupiter.api.Test;
 
 class FileOutputStreamExampleTest {
@@ -40,8 +43,8 @@ class FileOutputStreamExampleTest {
       while ((readBytes = inputStream.read(bytes)) != -1) {
         outputStream.write(bytes, 0, readBytes);
       }
+      assertEquals(new File(srcPath).length(), new File(destPath).length());
     }
-
-    assertTrue(DeleteFile.deleteFile("pom.xml.bk"));
+    Files.deleteIfExists(Paths.get(destPath));
   }
 }
