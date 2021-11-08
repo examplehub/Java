@@ -2,7 +2,6 @@ package com.examplehub.basics.io;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.examplehub.basics.file.DeleteFile;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import org.junit.jupiter.api.Test;

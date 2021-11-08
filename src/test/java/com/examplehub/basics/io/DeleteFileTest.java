@@ -1,4 +1,4 @@
-package com.examplehub.basics.file;
+package com.examplehub.basics.io;
 
 import static org.junit.jupiter.api.Assertions.*;
 
