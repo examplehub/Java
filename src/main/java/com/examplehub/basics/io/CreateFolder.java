@@ -1,4 +1,4 @@
-package com.examplehub.basics.file;
+package com.examplehub.basics.io;
 
 import java.io.File;
 
