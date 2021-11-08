@@ -6,10 +6,39 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 import org.junit.jupiter.api.Test;
 
 class FileExampleTest {
+
+  @Test
+  void testInit() {
+    File file = new File("pom.xml");
+    file = new File("/root/example_dir/example_file.txt");
+  }
+
+  @Test
+  void testLength() {
+    File file = new File("pom.xml");
+    assertTrue(file.length() >= 0);
+  }
+
+  @Test
+  void testLastModified() {
+    File file = new File("pom.xml");
+    long lastModified = file.lastModified();
+    String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(lastModified));
+    System.out.println(date); // 2021-08-31 09:27:21
+  }
+
+  @Test
+  void testGetName() {
+    File file = new File("pom.xml");
+    assertEquals("pom.xml", file.getName());
+  }
+
   @Test
   void testPath() throws IOException {
     File file = new File("../example.txt");
@@ -72,6 +101,7 @@ class FileExampleTest {
   void testListWithFilter() {
     File file = new File(".");
     File[] files = file.listFiles((dir, name) -> name.endsWith(".xml"));
+    assert files != null;
     assertEquals(1, files.length);
     assertEquals("pom.xml", files[0].getName());
   }
@@ -81,6 +111,7 @@ class FileExampleTest {
     File file = new File("temp");
     assertTrue(file.mkdir());
     assertTrue(file.delete());
+    assertFalse(file.exists());
   }
 
   @Test
@@ -90,6 +121,7 @@ class FileExampleTest {
     assertTrue(file.delete());
     assertTrue(new File("temp/sub").delete());
     assertTrue(new File("temp").delete());
+    assertFalse(file.exists());
   }
 
   @Test
@@ -100,5 +132,22 @@ class FileExampleTest {
     assertEquals("pom.xml", path.normalize().toString());
     File file = path.toFile();
     assertEquals("pom.xml", file.getName());
+  }
+
+  @Test
+  void testExists() {
+    File file = new File("pom.xml");
+    assertTrue(file.exists());
+    file = new File("pom_bk.xml");
+    assertFalse(file.exists());
+  }
+
+  @Test
+  void testDelete() throws IOException {
+    File file = new File("pom_bk.xml");
+    assertTrue(file.createNewFile());
+    assertTrue(file.exists());
+    assertTrue(file.delete());
+    assertFalse(file.exists());
   }
 }
