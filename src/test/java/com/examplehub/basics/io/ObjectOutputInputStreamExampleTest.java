@@ -1,15 +1,14 @@
 package com.examplehub.basics.io;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class User implements Serializable{
-  //@Serial TODO
+class User implements Serializable {
+  // @Serial TODO
   private static final long serialVersionUID = 100L;
   private final String username;
   private final String password;
@@ -23,13 +22,19 @@ class User implements Serializable{
 
   @Override
   public String toString() {
-    return "User{" +
-            "username='" + username + '\'' +
-            ", password='" + password + '\'' +
-            ", age=" + age +
-            '}';
+    return "User{"
+        + "username='"
+        + username
+        + '\''
+        + ", password='"
+        + password
+        + '\''
+        + ", age="
+        + age
+        + '}';
   }
 }
+
 class ObjectOutputInputStreamExampleTest {
   @Test
   void testWriteRead() throws IOException, ClassNotFoundException {
