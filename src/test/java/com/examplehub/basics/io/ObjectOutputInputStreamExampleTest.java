@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.*;
 
 class User implements Serializable{
-  @Serial
+  //@Serial TODO
   private static final long serialVersionUID = 100L;
   private final String username;
   private final String password;
