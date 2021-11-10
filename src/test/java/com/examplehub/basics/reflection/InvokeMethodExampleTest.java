@@ -1,18 +1,19 @@
 package com.examplehub.basics.reflection;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class InvokeMethodExampleTest {
   @Test
   void testInvoke()
       throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
     String str = "hello world";
-    Class cls = str.getClass();
+    Class<?> cls = str.getClass();
     Method method = cls.getMethod("substring", int.class);
     String newStr = (String) method.invoke(str, 6);
     assertEquals("world", newStr);
@@ -70,25 +71,6 @@ class InvokeMethodExampleTest {
     assertEquals("Child.hi", method.invoke(new Child()));
   }
 
-  //    @Test TODO
-  void testInvokeConstructorNoArgs()
-      throws InstantiationException, IllegalAccessException, NoSuchMethodException,
-          InvocationTargetException {
-    class People {
-      private String name;
-
-      public People() {
-        this.name = "hello";
-      }
-
-      public String getName() {
-        return name;
-      }
-    }
-    Class cls = People.class;
-    People obj = (People) cls.newInstance();
-    assertEquals("hello", cls.getMethod("getName").invoke(obj));
-  }
 
   @Test
   void testInvokeConstructor()

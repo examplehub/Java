@@ -4,18 +4,48 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.Month;
+
 class GetClassExampleTest {
+
+  @Test
+  void testVoid() {
+    Class<Void> c = void.class;
+    assertEquals("void", c.getName());
+    assertEquals("void", c.getSimpleName());
+    assertEquals("java.lang", c.getPackageName());
+    assertEquals("void", c.toString());
+  }
+
   @Test
   void testGetClass() throws ClassNotFoundException {
-    Class cls = String.class;
-    Class cls2 = "hello".getClass();
-    Class cls3 = Class.forName("java.lang.String");
-    assertTrue(cls == cls2 && cls == cls3);
+    Class<String> cls = String.class;
+    Class<?> cls2 = "hello".getClass();
+    Class<?> cls3 = Class.forName("java.lang.String");
+    assertSame(cls, cls2);
+    assertSame(cls, cls3);
+  }
+
+  @Test
+  void testGetClassByTYPE() {
+    Class<?> c = Integer.TYPE;
+    assertEquals("int", c.getName());
+    assertEquals("int", c.getSimpleName());
+    assertEquals("java.lang", c.getPackageName());
+    assertEquals("int", c.toString());
+    assertTrue(c.isPrimitive());
+  }
+
+  @Test
+  void testGetClassByClassloader() throws ClassNotFoundException {
+    ClassLoader classLoader = GetClassExample.class.getClassLoader();
+    Class<?> cls = classLoader.loadClass("java.lang.String");
+    assertEquals("java.lang.String", cls.getName());
   }
 
   @Test
   void testStringClass() {
-    Class cls = "".getClass();
+    Class<?> cls = "".getClass();
     assertEquals("java.lang.String", cls.getName());
     assertEquals("String", cls.getSimpleName());
     assertEquals("java.lang", cls.getPackageName());
@@ -27,7 +57,7 @@ class GetClassExampleTest {
 
   @Test
   void testInterface() {
-    Class cls = Runnable.class;
+    Class<Runnable> cls = Runnable.class;
     assertEquals("java.lang.Runnable", cls.getName());
     assertEquals("Runnable", cls.getSimpleName());
     assertEquals("java.lang", cls.getPackageName());
@@ -39,7 +69,7 @@ class GetClassExampleTest {
 
   @Test
   void testMonth() {
-    Class cls = java.time.Month.class;
+    Class<Month> cls = java.time.Month.class;
     assertEquals("java.time.Month", cls.getName());
     assertEquals("Month", cls.getSimpleName());
     assertEquals("java.time", cls.getPackageName());
@@ -51,7 +81,7 @@ class GetClassExampleTest {
 
   @Test
   void testStringArray() {
-    Class cls = String[].class;
+    Class<String[]> cls = String[].class;
     assertEquals("[Ljava.lang.String;", cls.getName());
     assertEquals("String[]", cls.getSimpleName());
     assertEquals("java.lang", cls.getPackageName());
@@ -63,7 +93,7 @@ class GetClassExampleTest {
 
   @Test
   void testPrimitive() {
-    Class cls = int.class;
+    Class<?> cls = int.class;
     assertEquals("int", cls.getName());
     assertEquals("int", cls.getSimpleName());
     assertEquals("java.lang", cls.getPackageName());
