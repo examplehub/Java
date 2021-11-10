@@ -7,15 +7,26 @@ import org.junit.jupiter.api.Test;
 
 class JoinThreadTest {
   @Test
-  void test() throws InterruptedException {
-    Thread thread = new Thread(new JoinThread());
-    thread.start();
-    for (int i = 0; i < 10; i++) {
-      if (i == 1) {
-        thread.join();
+  void testJoin() throws InterruptedException {
+    class ExampleThread extends Thread {
+      private int sum = 0;
+
+      @Override
+      public void run() {
+        for (int i = 1; i <= 100; ++i) {
+          sum += i;
+        }
       }
-      System.out.println(Thread.currentThread().getName() + i);
+
+      public int getSum() {
+        return sum;
+      }
     }
+    ExampleThread thread = new ExampleThread();
+    assertEquals(0, thread.getSum());
+    thread.start();
+    thread.join();
+    assertEquals(5050, thread.getSum());
   }
 
   @Test

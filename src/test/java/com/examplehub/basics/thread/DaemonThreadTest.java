@@ -1,13 +1,31 @@
 package com.examplehub.basics.thread;
 
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 class DaemonThreadTest {
-  //  @Test
+  @Test
   void test() {
-    Thread thread = new Thread(new DaemonThread());
+    class ExampleThread extends Thread {
+      @Override
+      public void run() {
+        assertTrue(Thread.currentThread().isDaemon());
+        while (true) {
+        }
+      }
+    }
+    ExampleThread thread = new ExampleThread();
     thread.setDaemon(true);
     thread.start();
-    for (int i = 0; i < 10; i++) {
-      System.out.println("main thread");
+
+    int sum = 0;
+    for (int i = 1; i <= 100; ++i) {
+      sum = sum + i;
+      assertTrue(thread.isAlive());
+      assertTrue(thread.isDaemon());
     }
+    assertEquals(5050, sum);
   }
 }

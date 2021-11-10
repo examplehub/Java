@@ -9,7 +9,7 @@ public class DeadLockExample {
     Runnable runnableA =
         () -> {
           synchronized (deadLockExample.resourceA) {
-            System.out.println(Thread.currentThread().getName() + "get resourceA");
+            System.out.println(Thread.currentThread().getName() + " get resourceA");
             try {
               Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -17,7 +17,7 @@ public class DeadLockExample {
             }
             System.out.println(Thread.currentThread().getName() + " is trying to get resourceB");
             synchronized (deadLockExample.resourceB) {
-              System.out.println(Thread.currentThread().getName() + "get resourceB");
+              System.out.println(Thread.currentThread().getName() + " get resourceB");
             }
           }
         };
@@ -25,7 +25,7 @@ public class DeadLockExample {
     Runnable runnableB =
         () -> {
           synchronized (deadLockExample.resourceB) {
-            System.out.println(Thread.currentThread().getName() + "get resourceB");
+            System.out.println(Thread.currentThread().getName() + " get resourceB");
             try {
               Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -33,7 +33,7 @@ public class DeadLockExample {
             }
             System.out.println(Thread.currentThread().getName() + " is trying to get resourceA");
             synchronized (deadLockExample.resourceA) {
-              System.out.println(Thread.currentThread().getName() + "get resourceA");
+              System.out.println(Thread.currentThread().getName() + " get resourceA");
             }
           }
         };

@@ -65,4 +65,36 @@ class WaitNotifyExampleTest {
       thread.interrupt();
     }
   }
+
+  @Test
+  void testPrint1To10TwoThread() throws InterruptedException {
+    class MyRunnable implements Runnable {
+      private int count = 1;
+      @Override
+      public void run() {
+        while (true) {
+          synchronized (this) {
+            notify();
+            if (count <= 10) {
+              System.out.println(Thread.currentThread().getName() + "->" + count++);
+            } else {
+              break;
+            }
+            try {
+              wait();
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
+          }
+        }
+      }
+    }
+    MyRunnable myRunnable = new MyRunnable();
+    Thread t1 = new Thread(myRunnable, "t1");
+    Thread t2 = new Thread(myRunnable, "t2");
+    t1.start();
+    t2.start();
+    t1.join();
+    t2.join();
+  }
 }
