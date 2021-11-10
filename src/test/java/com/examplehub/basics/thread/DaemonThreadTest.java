@@ -1,9 +1,9 @@
 package com.examplehub.basics.thread;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 class DaemonThreadTest {
   @Test
@@ -12,8 +12,7 @@ class DaemonThreadTest {
       @Override
       public void run() {
         assertTrue(Thread.currentThread().isDaemon());
-        while (true) {
-        }
+        while (true) {}
       }
     }
     ExampleThread thread = new ExampleThread();

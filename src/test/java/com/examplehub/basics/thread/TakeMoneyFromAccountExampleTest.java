@@ -1,16 +1,17 @@
 package com.examplehub.basics.thread;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class TakeMoneyFromAccountExampleTest {
   @Test
   void test() throws InterruptedException {
     class Account implements Runnable {
       private int balance;
-      public Account() {
-      }
+
+      public Account() {}
+
       public Account(int balance) {
         this.balance = balance;
       }

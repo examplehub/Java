@@ -9,12 +9,14 @@ class ExampleRunnableTest {
   void testRunnable() throws InterruptedException {
     class ExampleRunnable implements Runnable {
       private int sum = 0;
+
       @Override
       public void run() {
         for (int i = 1; i <= 100; ++i) {
           sum = sum + i;
         }
       }
+
       public int getSum() {
         return sum;
       }

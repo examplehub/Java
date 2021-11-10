@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class StateOfThreadTest {
   @Test
-  @Disabled //TODO
+  @Disabled // TODO
   void test() {
     Thread thread = new Thread(new StateOfThread());
     assertEquals(Thread.State.NEW, thread.getState());

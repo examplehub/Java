@@ -1,10 +1,10 @@
 package com.examplehub.basics.thread;
 
-import java.util.concurrent.*;
+import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.concurrent.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CallableExampleTest {
 

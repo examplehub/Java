@@ -1,19 +1,23 @@
 package com.examplehub.basics.thread;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
 class StopThreadTest {
   @Test
   void test() throws InterruptedException {
     class ExampleThread extends Thread {
       private boolean stopped = false;
+
       @Override
       public void run() {
-        while (!stopped) {
-        }
-        assertThrows(ArithmeticException.class, ()->{
-          int num = 10 / 0;
-        });
+        while (!stopped) {}
+        assertThrows(
+            ArithmeticException.class,
+            () -> {
+              int num = 10 / 0;
+            });
       }
 
       public void stop(boolean stopped) {

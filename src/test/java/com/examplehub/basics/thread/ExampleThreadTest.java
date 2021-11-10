@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class ExampleThreadTest {
   @Test
-  void test() throws Exception{
+  void test() throws Exception {
     class ExampleThread extends Thread {
       private int sum = 0;
 
@@ -34,14 +34,14 @@ class ExampleThreadTest {
   }
 
   @Test
-  @Disabled //TODO build fail on gradle platform
+  @Disabled // TODO build fail on gradle platform
   void testGetThreadId() {
-    new Thread(()->assertTrue(Thread.currentThread().getId() > 1)).start();
+    new Thread(() -> assertTrue(Thread.currentThread().getId() > 1)).start();
     assertEquals(1, Thread.currentThread().getId());
   }
 
   @Test
-  @Disabled //TODO build fail on gradle platform
+  @Disabled // TODO build fail on gradle platform
   void testGetThreadName() {
     class ExampleThread extends Thread {
       public ExampleThread(String name) {
@@ -54,7 +54,10 @@ class ExampleThreadTest {
       }
     }
     new ExampleThread("sub-thread").start();
-    new Thread(() -> assertEquals("second-sub-thread", Thread.currentThread().getName()), "second-sub-thread").start();
+    new Thread(
+            () -> assertEquals("second-sub-thread", Thread.currentThread().getName()),
+            "second-sub-thread")
+        .start();
     assertEquals("main", Thread.currentThread().getName());
   }
 

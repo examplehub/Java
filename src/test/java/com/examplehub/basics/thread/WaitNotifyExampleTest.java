@@ -70,6 +70,7 @@ class WaitNotifyExampleTest {
   void testPrint1To10TwoThread() throws InterruptedException {
     class MyRunnable implements Runnable {
       private int count = 1;
+
       @Override
       public void run() {
         while (true) {

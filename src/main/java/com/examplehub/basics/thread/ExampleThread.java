@@ -1,4 +1,3 @@
 package com.examplehub.basics.thread;
 
-public class ExampleThread {
-}
+public class ExampleThread {}
