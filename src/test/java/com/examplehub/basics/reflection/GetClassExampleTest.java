@@ -2,9 +2,8 @@ package com.examplehub.basics.reflection;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
-
 import java.time.Month;
+import org.junit.jupiter.api.Test;
 
 class GetClassExampleTest {
 

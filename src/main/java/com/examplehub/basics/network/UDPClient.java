@@ -10,7 +10,8 @@ public class UDPClient {
   public static void main(String[] args) throws IOException {
     DatagramSocket datagramSocket = new DatagramSocket();
     byte[] buffer = "123".getBytes(StandardCharsets.UTF_8);
-    DatagramPacket datagramPacket = new DatagramPacket(buffer, buffer.length, InetAddress.getLocalHost(), 6666);
+    DatagramPacket datagramPacket =
+        new DatagramPacket(buffer, buffer.length, InetAddress.getLocalHost(), 6666);
     datagramSocket.send(datagramPacket);
 
     byte[] bytes = new byte[1024];

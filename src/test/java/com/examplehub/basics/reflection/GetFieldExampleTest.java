@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-
 import org.junit.jupiter.api.Test;
 
 class Person {
@@ -63,7 +62,9 @@ class GetFieldExampleTest {
   }
 
   @Test
-  void testGetFieldValue() throws NoSuchFieldException, IllegalAccessException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException {
+  void testGetFieldValue()
+      throws NoSuchFieldException, IllegalAccessException, ClassNotFoundException,
+          NoSuchMethodException, InvocationTargetException, InstantiationException {
     Class<?> cls = Person.class;
     Constructor<?> constructor = cls.getConstructor(String.class);
     Person person = (Person) constructor.newInstance("Jack");
@@ -72,7 +73,9 @@ class GetFieldExampleTest {
   }
 
   @Test
-  void testSetFiledValue() throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, ClassNotFoundException, InvocationTargetException, InstantiationException {
+  void testSetFiledValue()
+      throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException,
+          ClassNotFoundException, InvocationTargetException, InstantiationException {
     Class<?> cls = Class.forName("com.examplehub.basics.reflection.Person");
     Constructor<?> constructor = cls.getConstructor(String.class);
     Object person = constructor.newInstance("Jack");

@@ -1,8 +1,6 @@
 package com.examplehub.basics.network;
 
 import com.examplehub.strings.ReverseString;
-import com.examplehub.utils.StringUtils;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -18,7 +16,7 @@ public class SocketServer {
 
     public void run() {
       try (InputStream inputStream = this.socket.getInputStream();
-           OutputStream outputStream = this.socket.getOutputStream()) {
+          OutputStream outputStream = this.socket.getOutputStream()) {
         handle(inputStream, outputStream);
       } catch (Exception e) {
         try {

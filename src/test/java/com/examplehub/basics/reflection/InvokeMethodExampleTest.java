@@ -1,12 +1,11 @@
 package com.examplehub.basics.reflection;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 class InvokeMethodExampleTest {
   @Test
@@ -70,7 +69,6 @@ class InvokeMethodExampleTest {
     Method method = Parent.class.getMethod("hi");
     assertEquals("Child.hi", method.invoke(new Child()));
   }
-
 
   @Test
   void testInvokeConstructor()

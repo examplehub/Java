@@ -2,17 +2,15 @@ package com.examplehub.basics.reflection;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import org.junit.jupiter.api.Test;
 
 class User {
-  private  String username;
-  private  int age;
+  private String username;
+  private int age;
 
-  public User() {
-  }
+  public User() {}
 
   public User(String username, int age) {
     this.username = username;
@@ -29,12 +27,10 @@ class User {
 
   @Override
   public String toString() {
-    return "User{" +
-            "username='" + username + '\'' +
-            ", age=" + age +
-            '}';
+    return "User{" + "username='" + username + '\'' + ", age=" + age + '}';
   }
 }
+
 class CreateObjFromClassTest {
   @Test
   void testCreateObjUsingNewInstance() throws InstantiationException, IllegalAccessException {
@@ -44,7 +40,8 @@ class CreateObjFromClassTest {
   }
 
   @Test
-  void testCreateCustomObject() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+  void testCreateCustomObject()
+      throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 
     Class<?> userClass = User.class;
     User user = (User) userClass.newInstance();
@@ -54,7 +51,9 @@ class CreateObjFromClassTest {
   }
 
   @Test
-  void testCreateCustomObjectUsingConstructor() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+  void testCreateCustomObjectUsingConstructor()
+      throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+          InstantiationException, IllegalAccessException {
     Class<?> userClass = Class.forName("com.examplehub.basics.reflection.User");
     Constructor<?> constructor = userClass.getConstructor();
     assertEquals("public com.examplehub.basics.reflection.User()", constructor.toString());
@@ -65,10 +64,14 @@ class CreateObjFromClassTest {
   }
 
   @Test
-  void testCreateCustomObjectUsingConstructorWithArgs() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+  void testCreateCustomObjectUsingConstructorWithArgs()
+      throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+          InstantiationException, IllegalAccessException {
     Class<?> userClass = Class.forName("com.examplehub.basics.reflection.User");
     Constructor<?> constructor = userClass.getConstructor(String.class, int.class);
-    assertEquals("public com.examplehub.basics.reflection.User(java.lang.String,int)", constructor.toString());
+    assertEquals(
+        "public com.examplehub.basics.reflection.User(java.lang.String,int)",
+        constructor.toString());
     User user = (User) constructor.newInstance("duyuanchao", 26);
     assertEquals("User{username='duyuanchao', age=26}", user.toString());
   }
