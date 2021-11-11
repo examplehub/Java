@@ -1,8 +1,8 @@
 package com.examplehub.designpatterns.template;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 class CalculatorTest {
   @Test

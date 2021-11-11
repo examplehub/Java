@@ -1,6 +1,6 @@
 package com.examplehub.designpatterns.decorator;
 
-public class Decorator implements Readable{
+public class Decorator implements Readable {
   Readable readable;
 
   public Decorator(Readable readable) {
